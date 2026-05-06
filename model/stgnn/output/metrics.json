@@ -1,0 +1,31 @@
+{
+  "dataset": {
+    "feature_table": "D:\\小桌面\\交通拥堵\\data-pipeline\\features\\output\\feature_table.csv",
+    "raw_rows": 12,
+    "samples": 12,
+    "train_samples": 9,
+    "val_samples": 3,
+    "segment_count": 12
+  },
+  "graph": {
+    "radius": 2,
+    "avg_neighbor_count": 2.0
+  },
+  "model": {
+    "type": "stgnn_proxy_ridge",
+    "feature_columns": [
+      "lag_target",
+      "neighbor_target_mean",
+      "event_attendance",
+      "precip",
+      "hour",
+      "is_peak",
+      "is_weekend"
+    ],
+    "metrics": {
+      "rmse": 10454.177389936624,
+      "mae": 9752.087584283452,
+      "mape": 214.36048764920187
+    }
+  }
+}

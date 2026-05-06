@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-05-03T07:24:06.446802+00:00",
+  "input_dir": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\governance\\output\\clean",
+  "mapping_file": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\alignment\\config\\spatial_mapping.json",
+  "aligned_file": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\alignment\\output\\aligned\\aligned_records.csv",
+  "total_aligned_rows": 103,
+  "summary": [
+    {
+      "source": "event",
+      "input_rows": 31,
+      "aligned_rows": 31,
+      "unmapped_rows": 0
+    },
+    {
+      "source": "metro",
+      "input_rows": 23,
+      "aligned_rows": 23,
+      "unmapped_rows": 0
+    },
+    {
+      "source": "taxi",
+      "input_rows": 46,
+      "aligned_rows": 46,
+      "unmapped_rows": 0
+    },
+    {
+      "source": "weather",
+      "input_rows": 3,
+      "aligned_rows": 3,
+      "unmapped_rows": 0
+    }
+  ]
+}

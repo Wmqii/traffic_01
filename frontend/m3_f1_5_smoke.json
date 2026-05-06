@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "name": "html_has_exportChartSelect",
+      "ok": true
+    },
+    {
+      "name": "html_has_exportChartBtn",
+      "ok": true
+    },
+    {
+      "name": "html_has_exportEventsCsvBtn",
+      "ok": true
+    },
+    {
+      "name": "html_has_exportHeatCsvBtn",
+      "ok": true
+    },
+    {
+      "name": "html_has_exportFeaturesCsvBtn",
+      "ok": true
+    },
+    {
+      "name": "html_has_exportAttributionCsvBtn",
+      "ok": true
+    },
+    {
+      "name": "html_has_exportBriefBtn",
+      "ok": true
+    },
+    {
+      "name": "js_has_exportChartPng",
+      "ok": true
+    },
+    {
+      "name": "js_has_exportCsvByType",
+      "ok": true
+    },
+    {
+      "name": "js_has_exportBriefMarkdown",
+      "ok": true
+    },
+    {
+      "name": "js_has_downloadDataUrl",
+      "ok": true
+    },
+    {
+      "name": "js_has_downloadText",
+      "ok": true
+    },
+    {
+      "name": "js_chart_option_trendChart",
+      "ok": true
+    },
+    {
+      "name": "js_chart_option_waterfallChart",
+      "ok": true
+    },
+    {
+      "name": "js_chart_option_boxplotChart",
+      "ok": true
+    },
+    {
+      "name": "js_chart_option_sankeyChart",
+      "ok": true
+    },
+    {
+      "name": "js_chart_option_heatReplayChart",
+      "ok": true
+    },
+    {
+      "name": "api_login_viewer_200",
+      "ok": true
+    },
+    {
+      "name": "api_heat_200",
+      "ok": true
+    },
+    {
+      "name": "api_events_200",
+      "ok": true
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 20,
+    "passed": 20
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "name": "login_viewer",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "heat",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "events",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "prediction",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "viewer_admin_forbidden",
+      "status": 403,
+      "ok": true
+    },
+    {
+      "name": "attribution_analyst",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 6,
+    "passed": 6
+  }
+}

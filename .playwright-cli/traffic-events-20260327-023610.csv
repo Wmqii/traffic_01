@@ -1,0 +1,4 @@
+event_id,segment_id,name,grid_id,severity,confidence,window_start,window_end
+event-bridge,SEG-4001,Event Bridge,GRID-D1,Critical,0.95,2026-03-27T08:00:00+00:00,2026-03-27T08:15:00+00:00
+event-stadium,SEG-2002,Event Stadium,GRID-B2,High,0.87,2026-03-27T08:00:00+00:00,2026-03-27T08:15:00+00:00
+event-market,SEG-1003,Event Market,GRID-A3,Elevated,0.79,2026-03-27T08:00:00+00:00,2026-03-27T08:15:00+00:00

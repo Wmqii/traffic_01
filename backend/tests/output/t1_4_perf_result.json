@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "task_id": "T1-4",
+    "run_mode": "local_testclient_pressure_baseline",
+    "note": "当前版本无WebSocket接口（OpenAPI未暴露ws路径），本轮对接口与地图缓存链路执行压测基线。"
+  },
+  "endpoints": [
+    {
+      "name": "prediction_segment",
+      "method": "GET",
+      "path": "/api/v1/predictions/segments/SEG-4001",
+      "total_requests": 150,
+      "concurrency": 25,
+      "status_codes": {
+        "200": 150
+      },
+      "failures": [],
+      "latency_ms": {
+        "min": 47.32,
+        "p50": 116.93,
+        "p95": 150.44,
+        "p99": 169.59,
+        "max": 176.18,
+        "avg": 116.77
+      },
+      "success_rate": 1.0
+    },
+    {
+      "name": "congestion_events",
+      "method": "GET",
+      "path": "/api/v1/congestion/events",
+      "total_requests": 150,
+      "concurrency": 25,
+      "status_codes": {
+        "200": 150
+      },
+      "failures": [],
+      "latency_ms": {
+        "min": 68.16,
+        "p50": 130.45,
+        "p95": 159.05,
+        "p99": 179.05,
+        "max": 207.21,
+        "avg": 129.48
+      },
+      "success_rate": 1.0
+    },
+    {
+      "name": "map_heat_cached",
+      "method": "GET",
+      "path": "/api/v1/map/layers/heat",
+      "total_requests": 200,
+      "concurrency": 30,
+      "status_codes": {
+        "200": 200
+      },
+      "failures": [],
+      "latency_ms": {
+        "min": 58.59,
+        "p50": 162.71,
+        "p95": 198.94,
+        "p99": 211.38,
+        "max": 216.31,
+        "avg": 158.19
+      },
+      "success_rate": 1.0
+    },
+    {
+      "name": "task_list",
+      "method": "GET",
+      "path": "/api/v1/tasks?limit=20",
+      "total_requests": 120,
+      "concurrency": 20,
+      "status_codes": {
+        "200": 120
+      },
+      "failures": [],
+      "latency_ms": {
+        "min": 51.07,
+        "p50": 101.04,
+        "p95": 123.61,
+        "p99": 134.64,
+        "max": 144.82,
+        "avg": 99.59
+      },
+      "success_rate": 1.0
+    },
+    {
+      "name": "audit_snapshot",
+      "method": "GET",
+      "path": "/api/v1/admin/audit",
+      "total_requests": 120,
+      "concurrency": 20,
+      "status_codes": {
+        "200": 120
+      },
+      "failures": [],
+      "latency_ms": {
+        "min": 46.4,
+        "p50": 102.9,
+        "p95": 135.31,
+        "p99": 149.46,
+        "max": 151.14,
+        "avg": 105.0
+      },
+      "success_rate": 1.0
+    }
+  ],
+  "gates": {
+    "api_p95_lt_2000ms": true,
+    "map_cached_p95_lt_1000ms": true,
+    "success_rate_ge_99pct": true
+  },
+  "summary": {
+    "pass": true,
+    "total_endpoints": 5,
+    "failed_gates": []
+  }
+}

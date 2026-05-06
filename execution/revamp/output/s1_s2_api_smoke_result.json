@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-04-02T01:37:45.419042",
+  "suite": "revamp_s1_s2_smoke",
+  "total": 10,
+  "passed": 10,
+  "failed": 0,
+  "checks": [
+    {
+      "path": "/health",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/map/layers/heat",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/congestion/events",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/predictions/segments/SEG-4001",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/attributions/events/event-bridge",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/analytics/overview?window_minutes=15",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/analytics/segments/SEG-4001/trend?points=12&window_minutes=15",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/analytics/segments/SEG-4001/causes?points=8&window_minutes=15",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/analytics/segments/SEG-4001/prediction?history_points=12&future_points=8&window_minutes=15",
+      "status_code": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/v1/admin/audit",
+      "status_code": 401,
+      "pass": true
+    }
+  ]
+}

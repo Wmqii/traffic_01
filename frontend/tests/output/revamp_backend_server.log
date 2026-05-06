@@ -1,0 +1,6 @@
+INFO:     Started server process [21740]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] \u901a\u5e38\u6bcf\u4e2a\u5957\u63a5\u5b57\u5730\u5740(\u534f\u8bae/\u7f51\u7edc\u5730\u5740/\u7aef\u53e3)\u53ea\u5141\u8bb8\u4f7f\u7528\u4e00\u6b21\u3002
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

@@ -1,0 +1,36 @@
+﻿{
+    "title":  {
+                  "text":  "O1-3 Monitor (dev)"
+              },
+    "tooltip":  {
+                    "trigger":  "item"
+                },
+    "legend":  {
+                   "top":  24
+               },
+    "xAxis":  {
+                  "type":  "category",
+                  "data":  [
+                               "critical_alerts",
+                               "warning_alerts",
+                               "total_checks"
+                           ]
+              },
+    "yAxis":  {
+                  "type":  "value"
+              },
+    "series":  [
+                   {
+                       "name":  "count",
+                       "type":  "bar",
+                       "data":  [
+                                    0,
+                                    0,
+                                    11
+                                ],
+                       "itemStyle":  {
+                                         "color":  "#1f78b4"
+                                     }
+                   }
+               ]
+}

@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "name": "uat_doc_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\M5-UAT_验收报告_v1.0.md"
+    },
+    {
+      "name": "testlog_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\logs\\testlog.csv"
+    },
+    {
+      "name": "releaselog_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\logs\\releaselog.csv"
+    },
+    {
+      "name": "section::## 2. UAT 范围",
+      "ok": true,
+      "detail": "## 2. UAT 范围"
+    },
+    {
+      "name": "section::## 3. 验收场景与结果",
+      "ok": true,
+      "detail": "## 3. 验收场景与结果"
+    },
+    {
+      "name": "section::## 4. 缺陷与风险",
+      "ok": true,
+      "detail": "## 4. 缺陷与风险"
+    },
+    {
+      "name": "section::## 5. 签字流转",
+      "ok": true,
+      "detail": "## 5. 签字流转"
+    },
+    {
+      "name": "section::## 6. 后续动作",
+      "ok": true,
+      "detail": "## 6. 后续动作"
+    },
+    {
+      "name": "required_uat_test_ids",
+      "ok": true,
+      "detail": "TL-0038,TL-0040,TL-0041,TL-0046,TL-0050"
+    },
+    {
+      "name": "required_release_ids",
+      "ok": true,
+      "detail": "RL-0034,RL-0035,RL-0036"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  }
+}

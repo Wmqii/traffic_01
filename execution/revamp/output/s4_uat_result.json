@@ -1,0 +1,132 @@
+{
+  "phase": "S4",
+  "gate": "GATE-REVAMP-S4-UAT",
+  "summary": {
+    "pass": true,
+    "total": 24,
+    "passed": 24,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "has_data-page=\"overview\"",
+      "ok": true,
+      "detail": "data-page=\"overview\""
+    },
+    {
+      "name": "has_data-page=\"attribution\"",
+      "ok": true,
+      "detail": "data-page=\"attribution\""
+    },
+    {
+      "name": "has_data-page=\"prediction\"",
+      "ok": true,
+      "detail": "data-page=\"prediction\""
+    },
+    {
+      "name": "has_data-page=\"data\"",
+      "ok": true,
+      "detail": "data-page=\"data\""
+    },
+    {
+      "name": "has_id=\"modelErrorCompareChart\"",
+      "ok": true,
+      "detail": "id=\"modelErrorCompareChart\""
+    },
+    {
+      "name": "has_id=\"analysisReport\"",
+      "ok": true,
+      "detail": "id=\"analysisReport\""
+    },
+    {
+      "name": "has_id=\"segmentTrendChart\"",
+      "ok": true,
+      "detail": "id=\"segmentTrendChart\""
+    },
+    {
+      "name": "has_id=\"causeTimelineChart\"",
+      "ok": true,
+      "detail": "id=\"causeTimelineChart\""
+    },
+    {
+      "name": "removed_id=\"loginBtn\"",
+      "ok": true,
+      "detail": "id=\"loginBtn\""
+    },
+    {
+      "name": "removed_id=\"logoutBtn\"",
+      "ok": true,
+      "detail": "id=\"logoutBtn\""
+    },
+    {
+      "name": "removed_page-management",
+      "ok": true,
+      "detail": "page-management"
+    },
+    {
+      "name": "removed_id=\"runtimeLog\"",
+      "ok": true,
+      "detail": "id=\"runtimeLog\""
+    },
+    {
+      "name": "removed_id=\"auditBox\"",
+      "ok": true,
+      "detail": "id=\"auditBox\""
+    },
+    {
+      "name": "semantic_flow_veh_15m",
+      "ok": true,
+      "detail": "flow_veh_15m"
+    },
+    {
+      "name": "semantic_contribution_pct",
+      "ok": true,
+      "detail": "contribution_pct"
+    },
+    {
+      "name": "semantic_pred_congestion_level",
+      "ok": true,
+      "detail": "pred_congestion_level"
+    },
+    {
+      "name": "semantic_analysisReport",
+      "ok": true,
+      "detail": "analysisReport"
+    },
+    {
+      "name": "api_overview_200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "api_overview_fields",
+      "ok": true,
+      "detail": "['congestion_index', 'congestion_level', 'flow_veh_15m', 'grid_id', 'segment_id', 'updated_at']"
+    },
+    {
+      "name": "api_model_errors_200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "api_model_errors_fields",
+      "ok": true,
+      "detail": "['family', 'mae', 'mape', 'model_id', 'model_name', 'rmse', 'score']"
+    },
+    {
+      "name": "api_segment_report_200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "api_segment_report_fields",
+      "ok": true,
+      "detail": "['actions', 'findings', 'generated_at', 'segment_id', 'window_minutes']"
+    },
+    {
+      "name": "admin_audit_no_token_401",
+      "ok": true,
+      "detail": "401"
+    }
+  ]
+}

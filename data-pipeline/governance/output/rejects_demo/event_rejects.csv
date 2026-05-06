@@ -1,0 +1,2 @@
+event_id,timestamp,location,category,expected_attendance,reject_reasons
+event-bridge,2026-03-26T18:00:00Z,Riverfront,Concert,-3,anomaly:expected_attendance

@@ -1,0 +1,11 @@
+{
+  "version": "v1.0",
+  "health_response_ms_warn": 800,
+  "health_response_ms_critical": 2000,
+  "model_mape_warn": 800,
+  "model_mape_critical": 1200,
+  "model_metrics_max_age_hours": 168,
+  "backend_err_log_warn_lines": 20,
+  "backend_err_log_critical_lines": 100
+}
+

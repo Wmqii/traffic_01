@@ -1,0 +1,2 @@
+[   21100ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js:0
+[   21410ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:5500/favicon.ico:0

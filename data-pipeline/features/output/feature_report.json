@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-05-03T07:24:16.528866+00:00",
+  "input_file": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\alignment\\output\\aligned\\aligned_records.csv",
+  "spec_file": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\features\\config\\feature_spec.json",
+  "output_file": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\features\\output\\feature_table.csv",
+  "total_features_rows": 100,
+  "feature_columns": [
+    "source",
+    "segment_id",
+    "grid_id",
+    "window_start",
+    "window_end",
+    "metric_name",
+    "metric_sum",
+    "metric_avg",
+    "metric_max",
+    "metric_count",
+    "hour_of_day",
+    "day_of_week",
+    "is_weekend",
+    "is_peak_hour",
+    "segment_numeric",
+    "grid_area",
+    "event_attendance_window_sum",
+    "weather_precip_window_avg",
+    "lag1_metric_sum"
+  ],
+  "sources": [
+    "event",
+    "metro",
+    "taxi",
+    "weather"
+  ]
+}

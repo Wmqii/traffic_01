@@ -1,0 +1,80 @@
+{
+  "checks": [
+    {
+      "name": "ddl_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\data-pipeline\\schema\\output\\core_schema_ddl.sql"
+    },
+    {
+      "name": "table::dim_region",
+      "ok": true,
+      "detail": "dim_region"
+    },
+    {
+      "name": "table::dim_grid",
+      "ok": true,
+      "detail": "dim_grid"
+    },
+    {
+      "name": "table::dim_segment",
+      "ok": true,
+      "detail": "dim_segment"
+    },
+    {
+      "name": "table::fact_traffic_metric_15m",
+      "ok": true,
+      "detail": "fact_traffic_metric_15m"
+    },
+    {
+      "name": "table::fact_congestion_event",
+      "ok": true,
+      "detail": "fact_congestion_event"
+    },
+    {
+      "name": "table::model_prediction_15m",
+      "ok": true,
+      "detail": "model_prediction_15m"
+    },
+    {
+      "name": "table::model_attribution",
+      "ok": true,
+      "detail": "model_attribution"
+    },
+    {
+      "name": "index::idx_fact_metric_window_segment",
+      "ok": true,
+      "detail": "idx_fact_metric_window_segment"
+    },
+    {
+      "name": "index::idx_event_time_segment",
+      "ok": true,
+      "detail": "idx_event_time_segment"
+    },
+    {
+      "name": "index::idx_prediction_window_segment",
+      "ok": true,
+      "detail": "idx_prediction_window_segment"
+    },
+    {
+      "name": "index::idx_attr_prediction",
+      "ok": true,
+      "detail": "idx_attr_prediction"
+    },
+    {
+      "name": "partition_window_start",
+      "ok": true,
+      "detail": "window partition"
+    },
+    {
+      "name": "partition_start_ts",
+      "ok": true,
+      "detail": "event partition"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 14,
+    "passed": 14,
+    "failed": 0
+  }
+}

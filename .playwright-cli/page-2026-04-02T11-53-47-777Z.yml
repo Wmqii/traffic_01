@@ -1,0 +1,116 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - heading "交通流量预测与拥堵成因分析" [level=1] [ref=e4]
+    - paragraph [ref=e5]: 业务看板（免登录）
+    - generic [ref=e6]:
+      - heading "查询条件" [level=2] [ref=e7]
+      - generic [ref=e8]: 接口地址
+      - textbox "接口地址" [ref=e9]: http://127.0.0.1:8000
+      - generic [ref=e10]: 时间窗
+      - combobox "时间窗" [ref=e11]:
+        - option "近 15 分钟" [selected]
+        - option "近 30 分钟"
+        - option "近 60 分钟"
+      - generic [ref=e12]: 路段
+      - combobox "路段" [ref=e13]:
+        - option "SEG-1001" [selected]
+        - option "SEG-1002"
+        - option "SEG-1003"
+        - option "SEG-2001"
+        - option "SEG-2002"
+        - option "SEG-2003"
+        - option "SEG-3001"
+        - option "SEG-3002"
+        - option "SEG-3003"
+        - option "SEG-4001"
+        - option "SEG-4002"
+        - option "SEG-4003"
+      - generic [ref=e14]: 路段搜索
+      - textbox "路段搜索" [ref=e15]:
+        - /placeholder: 输入路段关键字，如 1002 / SEG-2
+      - generic [ref=e16]:
+        - button "搜索定位路段" [ref=e17] [cursor=pointer]
+        - button "加入多路段对比" [ref=e18] [cursor=pointer]
+      - paragraph [ref=e19]: 可输入关键词快速定位目标路段（当前 12 条路段）。
+      - button "刷新数据" [ref=e20] [cursor=pointer]
+      - button "预测当前路段" [ref=e21] [cursor=pointer]
+      - generic [ref=e22]:
+        - checkbox "切换路段后自动打开预测页" [checked] [ref=e23]
+        - text: 切换路段后自动打开预测页
+    - generic [ref=e24]:
+      - heading "地图图层" [level=2] [ref=e25]
+      - generic [ref=e26]:
+        - checkbox "热力层" [checked] [ref=e27]
+        - text: 热力层
+      - generic [ref=e28]:
+        - checkbox "事件层" [checked] [ref=e29]
+        - text: 事件层
+      - generic [ref=e30]:
+        - checkbox "路段层" [checked] [ref=e31]
+        - text: 路段层
+    - generic [ref=e32]:
+      - heading "当前选择" [level=2] [ref=e33]
+      - generic [ref=e34]:
+        - generic [ref=e35]: 路段
+        - generic [ref=e36]: SEG-1001
+      - generic [ref=e37]:
+        - generic [ref=e38]: 状态
+        - generic [ref=e39]: 缓行
+      - generic [ref=e40]:
+        - generic [ref=e41]: 预测流量
+        - generic [ref=e42]: 270 辆/15分钟
+      - generic [ref=e43]:
+        - generic [ref=e44]: 预测指数
+        - generic [ref=e45]: "0.441"
+      - generic [ref=e46]:
+        - generic [ref=e47]: 最后刷新
+        - generic [ref=e48]: 2026/4/2 19:53:42
+      - paragraph [ref=e49]: 刷新完成 2026/4/2 19:53:42（路段 SEG-1001，预测结论=缓行(0.441)，含回退数据，路网=演示路网(回退)）
+  - main [ref=e50]:
+    - navigation [ref=e51]:
+      - button "路况总览" [ref=e52] [cursor=pointer]
+      - button "拥堵归因" [ref=e53] [cursor=pointer]
+      - button "流量预测" [ref=e54] [cursor=pointer]
+      - button "数据说明" [ref=e55] [cursor=pointer]
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: 拥堵路段数
+          - generic [ref=e60]: "5"
+        - generic [ref=e61]:
+          - generic [ref=e62]: 严重拥堵路段数
+          - generic [ref=e63]: "1"
+        - generic [ref=e64]:
+          - generic [ref=e65]: 路段平均流量(辆/15分钟)
+          - generic [ref=e66]: "483.3"
+        - generic [ref=e67]:
+          - generic [ref=e68]: 当前分析路段
+          - generic [ref=e69]: SEG-1001
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - heading "地区路况地图（点击路段联动）" [level=3] [ref=e72]
+          - generic [ref=e73]:
+            - generic [ref=e75]:
+              - generic [ref=e77]:
+                - text: SEG-1001
+                - text: 当前状态：缓行
+                - text: 预测状态：缓行
+                - text: 预测指数：0.441
+                - text: 预测流量：270 辆/15分钟
+              - button "Close popup" [ref=e79] [cursor=pointer]: ×
+            - generic:
+              - generic [ref=e80]:
+                - button "Zoom in" [ref=e81] [cursor=pointer]: +
+                - button "Zoom out" [ref=e82] [cursor=pointer]: −
+              - generic [ref=e83]:
+                - link "Leaflet" [ref=e84] [cursor=pointer]:
+                  - /url: https://leafletjs.com
+                  - img [ref=e85]
+                  - text: Leaflet
+                - text: "| © 高德地图"
+        - generic [ref=e89]:
+          - heading "各路段流量对比（单位：辆/15分钟）" [level=3] [ref=e90]
+          - generic [ref=e92]: ECharts 未加载，无法渲染图表。
+        - generic [ref=e93]:
+          - heading "选中路段流量趋势（横轴：时间）" [level=3] [ref=e94]
+          - generic [ref=e96]: ECharts 未加载，无法渲染图表。

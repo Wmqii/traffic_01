@@ -1,0 +1,10 @@
+﻿{
+  "generated_at": "2026-04-02T00:00:00+08:00",
+  "suite": "revamp_frontend_static_checks",
+  "checks": [
+    {"id": "FE-001", "name": "index contains no login panel", "result": "PASS"},
+    {"id": "FE-002", "name": "navigation includes 4 chinese business pages", "result": "PASS"},
+    {"id": "FE-003", "name": "frontend/assets/app.js syntax check via node --check", "result": "PASS"},
+    {"id": "FE-004", "name": "frontend/assets/styles.css includes responsive anti-squeeze layout", "result": "PASS"}
+  ]
+}

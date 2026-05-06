@@ -1,0 +1,48 @@
+{
+  "run_mode": "normal",
+  "checked_at": "2026-03-26T15:43:12.952663+00:00",
+  "input_dir": "D:\\\u5c0f\u684c\u9762\\\u4ea4\u901a\u62e5\u5835\\data-pipeline\\ingest\\staging",
+  "rules_file": "D:\\\u5c0f\u684c\u9762\\\u4ea4\u901a\u62e5\u5835\\data-pipeline\\governance\\config\\governance_rules.json",
+  "entries": [
+    {
+      "source": "event",
+      "total_rows": 3,
+      "clean_rows": 3,
+      "reject_rows": 0,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 0
+    },
+    {
+      "source": "metro",
+      "total_rows": 3,
+      "clean_rows": 3,
+      "reject_rows": 0,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 0
+    },
+    {
+      "source": "taxi",
+      "total_rows": 3,
+      "clean_rows": 3,
+      "reject_rows": 0,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 0
+    },
+    {
+      "source": "weather",
+      "total_rows": 3,
+      "clean_rows": 3,
+      "reject_rows": 0,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 0
+    }
+  ]
+}

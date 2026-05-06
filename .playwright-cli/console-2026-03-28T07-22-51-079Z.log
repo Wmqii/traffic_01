@@ -1,0 +1,30 @@
+[   21089ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js:0
+[   21175ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/map/layers/heat' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   21176ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/map/layers/heat:0
+[   21196ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/congestion/events' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   21196ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/congestion/events:0
+[   21200ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/predictions/segments/SEG-4001' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   21201ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/predictions/segments/SEG-4001:0
+[   21206ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/attributions/events/event-bridge' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   21206ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/attributions/events/event-bridge:0
+[   21211ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/admin/audit' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   21211ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/admin/audit:0
+[   21221ms] ReferenceError: echarts is not defined
+    at chart (http://127.0.0.1:5500/assets/app.js:516:26)
+    at renderTrendChart (http://127.0.0.1:5500/assets/app.js:529:5)
+    at renderAll (http://127.0.0.1:5500/assets/app.js:870:5)
+    at refreshData (http://127.0.0.1:5500/assets/app.js:966:5)
+    at async init (http://127.0.0.1:5500/assets/app.js:1051:5)
+[   38439ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/auth/login' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   38439ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/auth/login:0
+[   42231ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://a.tile.openstreetmap.org/12/3430/1673.png:0
+[   42240ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:5500/favicon.ico:0
+[   75500ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://a.tile.openstreetmap.org/12/3429/1674.png:0
+[   80317ms] ReferenceError: echarts is not defined
+    at chart (http://127.0.0.1:5500/assets/app.js:516:26)
+    at renderReplayHeatChart (http://127.0.0.1:5500/assets/app.js:749:5)
+    at http://127.0.0.1:5500/assets/app.js:805:7
+[   81511ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://b.tile.openstreetmap.org/12/3429/1672.png:0
+[   81513ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://c.tile.openstreetmap.org/12/3429/1673.png:0
+[   81514ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://c.tile.openstreetmap.org/12/3430/1672.png:0
+[   81514ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://b.tile.openstreetmap.org/12/3430/1674.png:0

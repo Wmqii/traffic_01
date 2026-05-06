@@ -1,0 +1,32 @@
+{
+  "dataset": {
+    "feature_table": "D:\\小桌面\\交通拥堵\\data-pipeline\\features\\output\\feature_table.csv",
+    "raw_rows": 12,
+    "window_rows": 6,
+    "sequence_length": 3,
+    "sample_count": 3,
+    "train_samples": 2,
+    "val_samples": 1,
+    "feature_count": 8
+  },
+  "runtime": {
+    "backend": "tensorflow.keras",
+    "used_fallback": false
+  },
+  "models": {
+    "lstm": {
+      "metrics": {
+        "rmse": 15579.091796875,
+        "mae": 15579.091796875,
+        "mape": 708.1405362215909
+      }
+    },
+    "gru": {
+      "metrics": {
+        "rmse": 15170.09375,
+        "mae": 15170.09375,
+        "mape": 689.5497159090909
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "version": "v1.0",
+  "pass_threshold": 90,
+  "weights": {
+    "completeness": 0.2,
+    "validity": 0.2,
+    "uniqueness": 0.2,
+    "timeliness": 0.2,
+    "pipeline_consistency": 0.2
+  },
+  "grading": [
+    {"min": 95, "grade": "A"},
+    {"min": 85, "grade": "B"},
+    {"min": 70, "grade": "C"},
+    {"min": 0, "grade": "D"}
+  ]
+}
+

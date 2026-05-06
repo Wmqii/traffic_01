@@ -1,0 +1,45 @@
+name: release-docs
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, e.g. v1.0.0"
+        required: true
+        type: string
+
+jobs:
+  package-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare package directory
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path dist -Force | Out-Null
+
+      - name: Create release package
+        shell: pwsh
+        run: |
+          $version = "${{ github.event.inputs.version }}"
+          $zipPath = "dist/release-$version.zip"
+          $paths = @(
+            "execution",
+            "jira_import_tasks.csv",
+            "trello_import_tasks.csv",
+            "交通流量预测与拥堵成因分析系统_需求报告.md",
+            "交通流量预测与拥堵成因分析系统_系统设计.md",
+            "交通流量预测与拥堵成因分析系统_多Agent实现方案.md",
+            "交通流量预测与拥堵成因分析系统_总清单与Agent任务边界.md"
+          )
+          Compress-Archive -Path $paths -DestinationPath $zipPath -Force
+          Write-Output "Created $zipPath"
+
+      - name: Upload release package
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-package-${{ github.event.inputs.version }}
+          path: dist/*.zip
+

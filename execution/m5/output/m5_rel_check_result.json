@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "name": "rel_doc_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\M5-REL_上线版本与发布说明_v1.0.md"
+    },
+    {
+      "name": "manifest_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\ops\\artifacts\\m5_release_manifest_v1.json"
+    },
+    {
+      "name": "uat_doc_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\M5-UAT_验收报告_v1.0.md"
+    },
+    {
+      "name": "c1_4_doc_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\C1-4_验收报告与项目复盘_v1.0.md"
+    },
+    {
+      "name": "section::## 3. 发布版本信息",
+      "ok": true,
+      "detail": "## 3. 发布版本信息"
+    },
+    {
+      "name": "section::## 5. 上线前检查清单",
+      "ok": true,
+      "detail": "## 5. 上线前检查清单"
+    },
+    {
+      "name": "section::## 6. 发布步骤",
+      "ok": true,
+      "detail": "## 6. 发布步骤"
+    },
+    {
+      "name": "section::## 7. 回滚策略",
+      "ok": true,
+      "detail": "## 7. 回滚策略"
+    },
+    {
+      "name": "section::## 8. 发布后观察",
+      "ok": true,
+      "detail": "## 8. 发布后观察"
+    },
+    {
+      "name": "manifest_content_valid",
+      "ok": true,
+      "detail": "release_version + gates + components"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  }
+}

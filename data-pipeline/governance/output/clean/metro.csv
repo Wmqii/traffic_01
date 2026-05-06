@@ -1,0 +1,24 @@
+train_id,timestamp,station,line,occupancy_pct
+metro-01651,2026-03-31T21:45:00Z,Station-01,Orange Line,47
+metro-01654,2026-03-31T21:45:00Z,Station-04,Green Line,42
+metro-01660,2026-03-31T21:45:00Z,Station-10,Blue Line,79
+metro-01661,2026-03-31T22:30:00Z,Station-01,Orange Line,56
+metro-01662,2026-03-31T22:15:00Z,Station-02,Blue Line,77
+metro-01663,2026-03-31T22:00:00Z,Station-03,Orange Line,68
+metro-01664,2026-03-31T22:15:00Z,Station-04,Blue Line,67
+metro-01665,2026-03-31T22:00:00Z,Station-05,Green Line,57
+metro-01666,2026-03-31T22:15:00Z,Station-06,Orange Line,42
+metro-01667,2026-03-31T22:00:00Z,Station-07,Red Line,34
+metro-01668,2026-03-31T22:15:00Z,Station-08,Green Line,78
+metro-01669,2026-03-31T22:45:00Z,Station-09,Red Line,78
+metro-01670,2026-03-31T22:15:00Z,Station-10,Red Line,90
+metro-01671,2026-03-31T23:00:00Z,Station-01,Blue Line,81
+metro-01672,2026-03-31T23:45:00Z,Station-02,Blue Line,37
+metro-01673,2026-03-31T23:15:00Z,Station-03,Red Line,34
+metro-01674,2026-03-31T23:30:00Z,Station-04,Blue Line,80
+metro-01675,2026-03-31T23:45:00Z,Station-05,Blue Line,38
+metro-01676,2026-03-31T23:30:00Z,Station-06,Blue Line,82
+metro-01677,2026-03-31T23:00:00Z,Station-07,Red Line,73
+metro-01678,2026-03-31T23:45:00Z,Station-08,Orange Line,70
+metro-01679,2026-03-31T23:00:00Z,Station-09,Red Line,42
+metro-01680,2026-03-31T23:45:00Z,Station-10,Blue Line,47

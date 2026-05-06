@@ -1,0 +1,99 @@
+{
+  "version": "a1-5-v1.0",
+  "model": "linear_regression_shap_like",
+  "sample_size": 12,
+  "global_top_features": [
+    {
+      "feature": "metric_avg",
+      "importance": 0.4999999999993356
+    },
+    {
+      "feature": "metric_max",
+      "importance": 0.49999999999931655
+    },
+    {
+      "feature": "segment_numeric",
+      "importance": 2.881734105440806e-13
+    },
+    {
+      "feature": "event_attendance_window_sum",
+      "importance": 1.881068955441282e-13
+    },
+    {
+      "feature": "hour_of_day",
+      "importance": 1.2902000097272774e-13
+    },
+    {
+      "feature": "metric_expected_attendance",
+      "importance": 8.386526971424582e-14
+    },
+    {
+      "feature": "source_event",
+      "importance": 8.386526971424582e-14
+    },
+    {
+      "feature": "grid_D",
+      "importance": 8.386526971424582e-14
+    },
+    {
+      "feature": "grid_A",
+      "importance": 7.430108919894424e-14
+    },
+    {
+      "feature": "metric_passenger_count",
+      "importance": 7.430108919894424e-14
+    }
+  ],
+  "sample_explanations": [
+    {
+      "segment_id": "SEG-4002",
+      "metric_name": "expected_attendance",
+      "pred_score": 17999.999999999996,
+      "rule_threshold": 7760.0,
+      "rule_hit": true,
+      "top_driver": [
+        "metric_avg"
+      ]
+    },
+    {
+      "segment_id": "SEG-4001",
+      "metric_name": "expected_attendance",
+      "pred_score": 5200.000000000004,
+      "rule_threshold": 7760.0,
+      "rule_hit": false,
+      "top_driver": [
+        "metric_avg"
+      ]
+    },
+    {
+      "segment_id": "SEG-4003",
+      "metric_name": "expected_attendance",
+      "pred_score": 2200.000000000002,
+      "rule_threshold": 7760.0,
+      "rule_hit": false,
+      "top_driver": [
+        "metric_avg"
+      ]
+    },
+    {
+      "segment_id": "SEG-2002",
+      "metric_name": "occupancy_pct",
+      "pred_score": 74.00000000000182,
+      "rule_threshold": 69.2,
+      "rule_hit": true,
+      "top_driver": [
+        "segment_numeric"
+      ]
+    },
+    {
+      "segment_id": "SEG-2001",
+      "metric_name": "occupancy_pct",
+      "pred_score": 68.00000000000182,
+      "rule_threshold": 69.2,
+      "rule_hit": false,
+      "top_driver": [
+        "segment_numeric"
+      ]
+    }
+  ]
+}

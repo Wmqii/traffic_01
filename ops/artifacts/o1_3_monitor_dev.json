@@ -1,0 +1,82 @@
+﻿{
+    "env":  "dev",
+    "generated_at":  "2026-03-27T07:49:11",
+    "api_base":  "http://127.0.0.1:8000",
+    "checks":  [
+                   {
+                       "name":  "runtime_file_exists",
+                       "ok":  true,
+                       "value":  true,
+                       "threshold":  null
+                   },
+                   {
+                       "name":  "backend_process_alive",
+                       "ok":  true,
+                       "value":  13972,
+                       "threshold":  null
+                   },
+                   {
+                       "name":  "frontend_process_alive",
+                       "ok":  true,
+                       "value":  17672,
+                       "threshold":  null
+                   },
+                   {
+                       "name":  "health_200",
+                       "ok":  true,
+                       "value":  200,
+                       "threshold":  null
+                   },
+                   {
+                       "name":  "health_latency_ms",
+                       "ok":  true,
+                       "value":  2.53,
+                       "threshold":  800
+                   },
+                   {
+                       "name":  "login_viewer_200",
+                       "ok":  true,
+                       "value":  200,
+                       "threshold":  null
+                   },
+                   {
+                       "name":  "map_heat_200",
+                       "ok":  true,
+                       "value":  200,
+                       "threshold":  null
+                   },
+                   {
+                       "name":  "model_metrics_exists",
+                       "ok":  true,
+                       "value":  "D:\\小桌面\\交通拥堵\\model\\deep\\output\\metrics.json",
+                       "threshold":  null
+                   },
+                   {
+                       "name":  "model_best_mape",
+                       "ok":  true,
+                       "value":  689.5497,
+                       "threshold":  800
+                   },
+                   {
+                       "name":  "model_metrics_age_hours",
+                       "ok":  true,
+                       "value":  6.25,
+                       "threshold":  168
+                   },
+                   {
+                       "name":  "backend_err_log_lines",
+                       "ok":  true,
+                       "value":  4,
+                       "threshold":  20
+                   }
+               ],
+    "alerts":  [
+
+               ],
+    "summary":  {
+                    "pass":  true,
+                    "total_checks":  11,
+                    "critical_alerts":  0,
+                    "warning_alerts":  0
+                }
+}

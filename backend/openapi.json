@@ -1,0 +1,2280 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "B1-1 核心 API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health Check",
+        "operationId": "health_check_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Health Check Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "summary": "Login",
+        "operationId": "login_api_v1_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/me": {
+      "get": {
+        "summary": "Me",
+        "operationId": "me_api_v1_auth_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfile"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/predictions/segments/{segment_id}": {
+      "get": {
+        "summary": "Get Segment Prediction",
+        "operationId": "get_segment_prediction_api_v1_predictions_segments__segment_id__get",
+        "parameters": [
+          {
+            "name": "segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Segment Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentPrediction"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/congestion/events": {
+      "get": {
+        "summary": "List Congestion Events",
+        "operationId": "list_congestion_events_api_v1_congestion_events_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CongestionEvent"
+                  },
+                  "type": "array",
+                  "title": "Response List Congestion Events Api V1 Congestion Events Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/attributions/events/{event_id}": {
+      "get": {
+        "summary": "Get Event Attribution",
+        "operationId": "get_event_attribution_api_v1_attributions_events__event_id__get",
+        "parameters": [
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Event Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventAttribution"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/map/layers/heat": {
+      "get": {
+        "summary": "Get Heat Layer",
+        "operationId": "get_heat_layer_api_v1_map_layers_heat_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeatLayer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/overview": {
+      "get": {
+        "summary": "Get Overview",
+        "operationId": "get_overview_api_v1_analytics_overview_get",
+        "parameters": [
+          {
+            "name": "window_minutes",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 15,
+              "title": "Window Minutes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SegmentOverviewItem"
+                  },
+                  "title": "Response Get Overview Api V1 Analytics Overview Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/segments/{segment_id}/trend": {
+      "get": {
+        "summary": "Get Segment Trend",
+        "operationId": "get_segment_trend_api_v1_analytics_segments__segment_id__trend_get",
+        "parameters": [
+          {
+            "name": "segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Segment Id"
+            }
+          },
+          {
+            "name": "points",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 12,
+              "title": "Points"
+            }
+          },
+          {
+            "name": "window_minutes",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 15,
+              "title": "Window Minutes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentTrendResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/segments/{segment_id}/causes": {
+      "get": {
+        "summary": "Get Segment Causes",
+        "operationId": "get_segment_causes_api_v1_analytics_segments__segment_id__causes_get",
+        "parameters": [
+          {
+            "name": "segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Segment Id"
+            }
+          },
+          {
+            "name": "points",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 8,
+              "title": "Points"
+            }
+          },
+          {
+            "name": "window_minutes",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 15,
+              "title": "Window Minutes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentCauseResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/segments/{segment_id}/prediction": {
+      "get": {
+        "summary": "Get Segment Prediction Analysis",
+        "operationId": "get_segment_prediction_analysis_api_v1_analytics_segments__segment_id__prediction_get",
+        "parameters": [
+          {
+            "name": "segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Segment Id"
+            }
+          },
+          {
+            "name": "history_points",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 12,
+              "title": "History Points"
+            }
+          },
+          {
+            "name": "future_points",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 8,
+              "title": "Future Points"
+            }
+          },
+          {
+            "name": "window_minutes",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 15,
+              "title": "Window Minutes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentPredictionAnalysisResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/models/errors": {
+      "get": {
+        "summary": "Get Model Error Comparison",
+        "operationId": "get_model_error_comparison_api_v1_analytics_models_errors_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ModelErrorItem"
+                  },
+                  "type": "array",
+                  "title": "Response Get Model Error Comparison Api V1 Analytics Models Errors Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/segments/{segment_id}/report": {
+      "get": {
+        "summary": "Get Segment Analysis Report",
+        "operationId": "get_segment_analysis_report_api_v1_analytics_segments__segment_id__report_get",
+        "parameters": [
+          {
+            "name": "segment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Segment Id"
+            }
+          },
+          {
+            "name": "window_minutes",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 15,
+              "title": "Window Minutes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentAnalysisReportResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/map/segments/geometry": {
+      "get": {
+        "summary": "Get Segment Geometries",
+        "operationId": "get_segment_geometries_api_v1_map_segments_geometry_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/SegmentGeometryItem"
+                  },
+                  "type": "array",
+                  "title": "Response Get Segment Geometries Api V1 Map Segments Geometry Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cache/stats": {
+      "get": {
+        "summary": "Get Cache Stats",
+        "operationId": "get_cache_stats_api_v1_cache_stats_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CacheStats"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/cache/refresh/heat": {
+      "post": {
+        "summary": "Refresh Heat Cache",
+        "operationId": "refresh_heat_cache_api_v1_cache_refresh_heat_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CacheRefreshResult"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/tasks/cache/refresh-heat": {
+      "post": {
+        "summary": "Submit Refresh Heat Task",
+        "operationId": "submit_refresh_heat_task_api_v1_tasks_cache_refresh_heat_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/tasks/{task_id}": {
+      "get": {
+        "summary": "Get Task Status",
+        "operationId": "get_task_status_api_v1_tasks__task_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tasks": {
+      "get": {
+        "summary": "List Tasks",
+        "operationId": "list_tasks_api_v1_tasks_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AsyncTaskStatus"
+                  },
+                  "title": "Response List Tasks Api V1 Tasks Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tasks/model/retrain": {
+      "post": {
+        "summary": "Submit Model Retrain Task",
+        "operationId": "submit_model_retrain_task_api_v1_tasks_model_retrain_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModelRetrainRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/tasks/model/publish": {
+      "post": {
+        "summary": "Submit Model Publish Task",
+        "operationId": "submit_model_publish_task_api_v1_tasks_model_publish_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModelPublishRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/tasks/model/health-check": {
+      "post": {
+        "summary": "Submit Model Health Task",
+        "operationId": "submit_model_health_task_api_v1_tasks_model_health_check_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/tasks/model/rollback": {
+      "post": {
+        "summary": "Submit Model Rollback Task",
+        "operationId": "submit_model_rollback_task_api_v1_tasks_model_rollback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModelRollbackRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsyncTaskSubmitResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/model/health": {
+      "get": {
+        "summary": "Get Model Health",
+        "operationId": "get_model_health_api_v1_model_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelHealthSnapshot"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/model/registry": {
+      "get": {
+        "summary": "Get Model Registry",
+        "operationId": "get_model_registry_api_v1_model_registry_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelRegistrySnapshot"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/audit": {
+      "get": {
+        "summary": "Get Audit Snapshot",
+        "operationId": "get_audit_snapshot_api_v1_admin_audit_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditSnapshot"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/audit/events": {
+      "get": {
+        "summary": "List Audit Events",
+        "operationId": "list_audit_events_api_v1_admin_audit_events_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuditEvent"
+                  },
+                  "title": "Response List Audit Events Api V1 Admin Audit Events Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AsyncTaskStatus": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          },
+          "task_type": {
+            "type": "string",
+            "title": "Task Type"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Result"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "task_id",
+          "task_type",
+          "status",
+          "created_at"
+        ],
+        "title": "AsyncTaskStatus"
+      },
+      "AsyncTaskSubmitResponse": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          },
+          "task_type": {
+            "type": "string",
+            "title": "Task Type"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "task_id",
+          "task_type",
+          "status",
+          "created_at"
+        ],
+        "title": "AsyncTaskSubmitResponse"
+      },
+      "AttributionDriver": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          },
+          "impact": {
+            "type": "number",
+            "title": "Impact"
+          },
+          "notes": {
+            "type": "string",
+            "title": "Notes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "source",
+          "value",
+          "impact",
+          "notes"
+        ],
+        "title": "AttributionDriver"
+      },
+      "AuditEvent": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "event_type": {
+            "type": "string",
+            "title": "Event Type"
+          },
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "method": {
+            "type": "string",
+            "title": "Method"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "status_code": {
+            "type": "integer",
+            "title": "Status Code"
+          },
+          "duration_ms": {
+            "type": "number",
+            "title": "Duration Ms"
+          },
+          "username": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Username"
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role"
+          },
+          "client_ip": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Ip"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "event_id",
+          "timestamp",
+          "event_type",
+          "request_id",
+          "method",
+          "path",
+          "status_code",
+          "duration_ms"
+        ],
+        "title": "AuditEvent"
+      },
+      "AuditSnapshot": {
+        "properties": {
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "user_count": {
+            "type": "integer",
+            "title": "User Count"
+          },
+          "endpoint_count": {
+            "type": "integer",
+            "title": "Endpoint Count"
+          },
+          "audit_log_file": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audit Log File"
+          },
+          "recent_event_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recent Event Count"
+          },
+          "error_event_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Event Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "generated_at",
+          "user_count",
+          "endpoint_count"
+        ],
+        "title": "AuditSnapshot"
+      },
+      "CacheRefreshResult": {
+        "properties": {
+          "refreshed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Refreshed At"
+          },
+          "cache_key": {
+            "type": "string",
+            "title": "Cache Key"
+          },
+          "segment_count": {
+            "type": "integer",
+            "title": "Segment Count"
+          },
+          "ttl_seconds": {
+            "type": "integer",
+            "title": "Ttl Seconds"
+          }
+        },
+        "type": "object",
+        "required": [
+          "refreshed_at",
+          "cache_key",
+          "segment_count",
+          "ttl_seconds"
+        ],
+        "title": "CacheRefreshResult"
+      },
+      "CacheStats": {
+        "properties": {
+          "backend": {
+            "type": "string",
+            "title": "Backend"
+          },
+          "configured_backend": {
+            "type": "string",
+            "title": "Configured Backend"
+          },
+          "default_ttl_seconds": {
+            "type": "integer",
+            "title": "Default Ttl Seconds"
+          },
+          "hits": {
+            "type": "integer",
+            "title": "Hits"
+          },
+          "misses": {
+            "type": "integer",
+            "title": "Misses"
+          },
+          "keys": {
+            "type": "integer",
+            "title": "Keys"
+          },
+          "fallback_reason": {
+            "type": "string",
+            "title": "Fallback Reason",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "backend",
+          "configured_backend",
+          "default_ttl_seconds",
+          "hits",
+          "misses",
+          "keys"
+        ],
+        "title": "CacheStats"
+      },
+      "CauseRankingItem": {
+        "properties": {
+          "cause": {
+            "type": "string",
+            "title": "Cause"
+          },
+          "contribution_pct": {
+            "type": "number",
+            "title": "Contribution Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cause",
+          "contribution_pct"
+        ],
+        "title": "CauseRankingItem"
+      },
+      "CauseTimelinePoint": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "weather_pct": {
+            "type": "number",
+            "title": "Weather Pct"
+          },
+          "holiday_pct": {
+            "type": "number",
+            "title": "Holiday Pct"
+          },
+          "incident_pct": {
+            "type": "number",
+            "title": "Incident Pct"
+          },
+          "other_pct": {
+            "type": "number",
+            "title": "Other Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "timestamp",
+          "weather_pct",
+          "holiday_pct",
+          "incident_pct",
+          "other_pct"
+        ],
+        "title": "CauseTimelinePoint"
+      },
+      "CongestionEvent": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "grid_id": {
+            "type": "string",
+            "title": "Grid Id"
+          },
+          "window_start": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window Start"
+          },
+          "window_end": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window End"
+          },
+          "severity": {
+            "type": "string",
+            "title": "Severity"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "event_id",
+          "segment_id",
+          "name",
+          "grid_id",
+          "window_start",
+          "window_end",
+          "severity",
+          "confidence"
+        ],
+        "title": "CongestionEvent"
+      },
+      "EventAttribution": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "predicted_severity": {
+            "type": "string",
+            "title": "Predicted Severity"
+          },
+          "drivers": {
+            "items": {
+              "$ref": "#/components/schemas/AttributionDriver"
+            },
+            "type": "array",
+            "title": "Drivers"
+          }
+        },
+        "type": "object",
+        "required": [
+          "event_id",
+          "segment_id",
+          "generated_at",
+          "predicted_severity",
+          "drivers"
+        ],
+        "title": "EventAttribution"
+      },
+      "FeatureSummaryItem": {
+        "properties": {
+          "metric_name": {
+            "type": "string",
+            "title": "Metric Name"
+          },
+          "metric_value": {
+            "type": "number",
+            "title": "Metric Value"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          }
+        },
+        "type": "object",
+        "required": [
+          "metric_name",
+          "metric_value",
+          "source"
+        ],
+        "title": "FeatureSummaryItem"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HeatLayer": {
+        "properties": {
+          "layer_id": {
+            "type": "string",
+            "title": "Layer Id"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/HeatSegment"
+            },
+            "type": "array",
+            "title": "Segments"
+          }
+        },
+        "type": "object",
+        "required": [
+          "layer_id",
+          "generated_at",
+          "segments"
+        ],
+        "title": "HeatLayer"
+      },
+      "HeatSegment": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "grid_id": {
+            "type": "string",
+            "title": "Grid Id"
+          },
+          "heat_score": {
+            "type": "number",
+            "title": "Heat Score"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "grid_id",
+          "heat_score",
+          "updated_at"
+        ],
+        "title": "HeatSegment"
+      },
+      "LoginRequest": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "password": {
+            "type": "string",
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "title": "LoginRequest"
+      },
+      "LoginResponse": {
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "title": "Access Token"
+          },
+          "token_type": {
+            "type": "string",
+            "title": "Token Type",
+            "default": "bearer"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Expires At"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role"
+          }
+        },
+        "type": "object",
+        "required": [
+          "access_token",
+          "expires_at",
+          "role"
+        ],
+        "title": "LoginResponse"
+      },
+      "ModelErrorItem": {
+        "properties": {
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name"
+          },
+          "family": {
+            "type": "string",
+            "title": "Family"
+          },
+          "mae": {
+            "type": "number",
+            "title": "Mae"
+          },
+          "mape": {
+            "type": "number",
+            "title": "Mape"
+          },
+          "rmse": {
+            "type": "number",
+            "title": "Rmse"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_id",
+          "model_name",
+          "family",
+          "mae",
+          "mape",
+          "rmse",
+          "score"
+        ],
+        "title": "ModelErrorItem"
+      },
+      "ModelHealthSnapshot": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Checked At"
+          },
+          "active_version": {
+            "type": "string",
+            "title": "Active Version"
+          },
+          "model_family": {
+            "type": "string",
+            "title": "Model Family"
+          },
+          "metrics_exists": {
+            "type": "boolean",
+            "title": "Metrics Exists"
+          },
+          "metrics_age_hours": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metrics Age Hours"
+          },
+          "mape": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mape"
+          },
+          "thresholds": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Thresholds"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "checked_at",
+          "active_version",
+          "model_family",
+          "metrics_exists",
+          "thresholds"
+        ],
+        "title": "ModelHealthSnapshot"
+      },
+      "ModelPublishRequest": {
+        "properties": {
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "operator": {
+            "type": "string",
+            "title": "Operator",
+            "default": "admin"
+          }
+        },
+        "type": "object",
+        "title": "ModelPublishRequest"
+      },
+      "ModelRegistrySnapshot": {
+        "properties": {
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          },
+          "active": {
+            "type": "object",
+            "title": "Active"
+          },
+          "candidates": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Candidates"
+          },
+          "last_health": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Health"
+          },
+          "history": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "History"
+          }
+        },
+        "type": "object",
+        "required": [
+          "updated_at",
+          "active",
+          "candidates"
+        ],
+        "title": "ModelRegistrySnapshot"
+      },
+      "ModelRetrainRequest": {
+        "properties": {
+          "model_family": {
+            "type": "string",
+            "title": "Model Family",
+            "default": "gru"
+          },
+          "trigger": {
+            "type": "string",
+            "title": "Trigger",
+            "default": "manual"
+          },
+          "dry_run": {
+            "type": "boolean",
+            "title": "Dry Run",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "ModelRetrainRequest"
+      },
+      "ModelRollbackRequest": {
+        "properties": {
+          "target_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Version"
+          },
+          "operator": {
+            "type": "string",
+            "title": "Operator",
+            "default": "admin"
+          }
+        },
+        "type": "object",
+        "title": "ModelRollbackRequest"
+      },
+      "PredictionBacktestPoint": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "actual_flow_veh_15m": {
+            "type": "number",
+            "title": "Actual Flow Veh 15M"
+          },
+          "pred_flow_veh_15m": {
+            "type": "number",
+            "title": "Pred Flow Veh 15M"
+          },
+          "abs_error": {
+            "type": "number",
+            "title": "Abs Error"
+          },
+          "ape": {
+            "type": "number",
+            "title": "Ape"
+          }
+        },
+        "type": "object",
+        "required": [
+          "timestamp",
+          "actual_flow_veh_15m",
+          "pred_flow_veh_15m",
+          "abs_error",
+          "ape"
+        ],
+        "title": "PredictionBacktestPoint"
+      },
+      "PredictionFuturePoint": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "pred_flow_veh_15m": {
+            "type": "number",
+            "title": "Pred Flow Veh 15M"
+          },
+          "pred_congestion_index": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Pred Congestion Index"
+          },
+          "pred_congestion_level": {
+            "type": "string",
+            "title": "Pred Congestion Level"
+          }
+        },
+        "type": "object",
+        "required": [
+          "timestamp",
+          "pred_flow_veh_15m",
+          "pred_congestion_index",
+          "pred_congestion_level"
+        ],
+        "title": "PredictionFuturePoint"
+      },
+      "PredictionMetrics": {
+        "properties": {
+          "mae": {
+            "type": "number",
+            "title": "Mae"
+          },
+          "mape": {
+            "type": "number",
+            "title": "Mape"
+          },
+          "rmse": {
+            "type": "number",
+            "title": "Rmse"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mae",
+          "mape",
+          "rmse"
+        ],
+        "title": "PredictionMetrics"
+      },
+      "SegmentAnalysisReportResponse": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "window_minutes": {
+            "type": "integer",
+            "title": "Window Minutes"
+          },
+          "findings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Findings"
+          },
+          "actions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Actions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "generated_at",
+          "window_minutes",
+          "findings",
+          "actions"
+        ],
+        "title": "SegmentAnalysisReportResponse"
+      },
+      "SegmentCauseResponse": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "window_minutes": {
+            "type": "integer",
+            "title": "Window Minutes"
+          },
+          "timeline": {
+            "items": {
+              "$ref": "#/components/schemas/CauseTimelinePoint"
+            },
+            "type": "array",
+            "title": "Timeline"
+          },
+          "ranking": {
+            "items": {
+              "$ref": "#/components/schemas/CauseRankingItem"
+            },
+            "type": "array",
+            "title": "Ranking"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "window_minutes",
+          "timeline",
+          "ranking",
+          "summary"
+        ],
+        "title": "SegmentCauseResponse"
+      },
+      "SegmentGeometryItem": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "coordinates": {
+            "items": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Coordinates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "coordinates"
+        ],
+        "title": "SegmentGeometryItem"
+      },
+      "SegmentOverviewItem": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "grid_id": {
+            "type": "string",
+            "title": "Grid Id"
+          },
+          "flow_veh_15m": {
+            "type": "number",
+            "title": "Flow Veh 15M"
+          },
+          "congestion_index": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Congestion Index"
+          },
+          "congestion_level": {
+            "type": "string",
+            "title": "Congestion Level"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "grid_id",
+          "flow_veh_15m",
+          "congestion_index",
+          "congestion_level",
+          "updated_at"
+        ],
+        "title": "SegmentOverviewItem"
+      },
+      "SegmentPrediction": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "window_start": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window Start"
+          },
+          "window_end": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window End"
+          },
+          "predicted_congestion": {
+            "type": "string",
+            "title": "Predicted Congestion"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          },
+          "feature_summary": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureSummaryItem"
+            },
+            "type": "array",
+            "title": "Feature Summary"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "source",
+          "window_start",
+          "window_end",
+          "predicted_congestion",
+          "confidence",
+          "feature_summary"
+        ],
+        "title": "SegmentPrediction"
+      },
+      "SegmentPredictionAnalysisResponse": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "window_minutes": {
+            "type": "integer",
+            "title": "Window Minutes"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "backtest": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionBacktestPoint"
+            },
+            "type": "array",
+            "title": "Backtest"
+          },
+          "future": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionFuturePoint"
+            },
+            "type": "array",
+            "title": "Future"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/PredictionMetrics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "window_minutes",
+          "generated_at",
+          "backtest",
+          "future",
+          "metrics"
+        ],
+        "title": "SegmentPredictionAnalysisResponse"
+      },
+      "SegmentTrendPoint": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "flow_veh_15m": {
+            "type": "number",
+            "title": "Flow Veh 15M"
+          },
+          "congestion_index": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Congestion Index"
+          }
+        },
+        "type": "object",
+        "required": [
+          "timestamp",
+          "flow_veh_15m",
+          "congestion_index"
+        ],
+        "title": "SegmentTrendPoint"
+      },
+      "SegmentTrendResponse": {
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "title": "Segment Id"
+          },
+          "window_minutes": {
+            "type": "integer",
+            "title": "Window Minutes"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/SegmentTrendPoint"
+            },
+            "type": "array",
+            "title": "Points"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "window_minutes",
+          "points"
+        ],
+        "title": "SegmentTrendResponse"
+      },
+      "UserProfile": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "role",
+          "display_name"
+        ],
+        "title": "UserProfile"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

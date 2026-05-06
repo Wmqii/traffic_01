@@ -1,0 +1,71 @@
+﻿{
+    "env":  "dev",
+    "generated_at":  "2026-03-27T07:49:11",
+    "api_base":  "http://127.0.0.1:8000",
+    "runbook":  {
+                    "mttr_slo_seconds":  300,
+                    "docs":  [
+                                 "ops/runbooks/o1_5_runbook_v1.0.md",
+                                 "ops/runbooks/o1_5_incident_plan_v1.0.md"
+                             ]
+                },
+    "incident":  {
+                     "mttr_seconds":  6.37,
+                     "recovered_at":  "2026-03-27T07:49:11",
+                     "started_at":  "2026-03-27T07:49:05"
+                 },
+    "steps":  [
+                  {
+                      "name":  "baseline_deploy",
+                      "ok":  true,
+                      "detail":  "deploy_env finished for dev",
+                      "data":  null
+                  },
+                  {
+                      "name":  "baseline_smoke",
+                      "ok":  true,
+                      "detail":  "smoke check passed",
+                      "data":  null
+                  },
+                  {
+                      "name":  "baseline_monitoring",
+                      "ok":  true,
+                      "detail":  "monitoring check passed",
+                      "data":  null
+                  },
+                  {
+                      "name":  "gray_release_drill",
+                      "ok":  true,
+                      "detail":  "gray drill summary pass=True",
+                      "data":  {
+                                   "artifact":  "D:\\小桌面\\交通拥堵\\ops\\artifacts\\o1_4_gray_release_drill_dev.json"
+                               }
+                  },
+                  {
+                      "name":  "incident_detection",
+                      "ok":  true,
+                      "detail":  "health unavailable detected=True",
+                      "data":  null
+                  },
+                  {
+                      "name":  "incident_recovery",
+                      "ok":  true,
+                      "detail":  "start+smoke+monitor finished, mttr=6.37s",
+                      "data":  {
+                                   "mttr_seconds":  6.37
+                               }
+                  },
+                  {
+                      "name":  "incident_mttr_slo",
+                      "ok":  true,
+                      "detail":  "mttr=6.37s, slo\u003c=300s",
+                      "data":  null
+                  }
+              ],
+    "summary":  {
+                    "pass":  true,
+                    "total_steps":  7,
+                    "passed_steps":  7,
+                    "failed_steps":  0
+                }
+}

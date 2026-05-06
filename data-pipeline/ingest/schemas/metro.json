@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MetroSnapshot",
+  "type": "object",
+  "properties": {
+    "train_id": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "station": {"type": "string"},
+    "line": {"type": "string"},
+    "occupancy_pct": {"type": "number", "minimum": 0, "maximum": 100}
+  },
+  "required": ["train_id", "timestamp", "station", "line", "occupancy_pct"]
+}

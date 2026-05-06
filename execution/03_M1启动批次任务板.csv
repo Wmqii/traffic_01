@@ -1,0 +1,6 @@
+﻿"phase","task_id","summary","owner_agent","status","start_date","due_date","dependency","notes"
+"M1","G1-1","项目章程与里程碑冻结","PM-Agent","Done","2026-03-26","2026-04-02","","execution/m1/G1-1_项目章程与里程碑冻结_v1.0.md; execution/m1/M1_评审记录_2026-03-26.md"
+"M1","G1-2","需求基线与变更流程建立","PM-Agent","Done","2026-03-26","2026-04-04","G1-1","execution/m1/G1-2_需求基线与变更流程_v1.0.md; execution/m1/M1_评审记录_2026-03-26.md"
+"M1","G1-3","多Agent协作机制发布","PM-Agent","Done","2026-03-26","2026-04-05","G1-1","execution/m1/G1-3_多Agent协作机制_v1.0.md; execution/m1/M1_评审记录_2026-03-26.md"
+"M1","G1-4","周例会与风险台账建立","PM-Agent","Done","2026-03-27","2026-04-06","G1-1","execution/m1/G1-4_周例会机制与风险台账_v1.0.md; execution/m1/M1_评审记录_2026-03-26_第2轮.md"
+"M1","O1-1","CI/CD流水线与制品管理","Ops-Agent","Done","2026-03-27","2026-04-10","G1-3","execution/m1/O1-1_CICD基线与制品管理_v1.0.md; execution/m1/M1_评审记录_2026-03-26_第3轮.md"

@@ -1,0 +1,80 @@
+{
+  "checks": [
+    {
+      "name": "main_doc_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\C1-4_验收报告与项目复盘_v1.0.md"
+    },
+    {
+      "name": "testlog_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\logs\\testlog.csv"
+    },
+    {
+      "name": "worklog_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\logs\\worklog.csv"
+    },
+    {
+      "name": "releaselog_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\logs\\releaselog.csv"
+    },
+    {
+      "name": "section::## 3. 验收结果总览",
+      "ok": true,
+      "detail": "## 3. 验收结果总览"
+    },
+    {
+      "name": "section::## 4. UAT 就绪性结论",
+      "ok": true,
+      "detail": "## 4. UAT 就绪性结论"
+    },
+    {
+      "name": "section::## 5. 项目复盘",
+      "ok": true,
+      "detail": "## 5. 项目复盘"
+    },
+    {
+      "name": "section::### 5.1 做得好的点",
+      "ok": true,
+      "detail": "### 5.1 做得好的点"
+    },
+    {
+      "name": "section::### 5.4 改进行动（下一迭代）",
+      "ok": true,
+      "detail": "### 5.4 改进行动（下一迭代）"
+    },
+    {
+      "name": "required_test_ids_present",
+      "ok": true,
+      "detail": "TL-0038,TL-0040,TL-0041,TL-0046,TL-0049"
+    },
+    {
+      "name": "ref::C1-3_用户手册与运维手册_v1.0.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\C1-3_用户手册与运维手册_v1.0.md"
+    },
+    {
+      "name": "ref::C1-3_验证记录_2026-03-27.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\C1-3_验证记录_2026-03-27.md"
+    },
+    {
+      "name": "ref::M4_阶段收口总结_2026-03-27.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m4\\M4_阶段收口总结_2026-03-27.md"
+    },
+    {
+      "name": "ref::M5_入口检查与启动说明_v1.0.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\M5_入口检查与启动说明_v1.0.md"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 14,
+    "passed": 14,
+    "failed": 0
+  }
+}

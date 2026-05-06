@@ -1,0 +1,40 @@
+{
+  "version": "v1.0",
+  "timestamp_format": "iso8601",
+  "max_delay_minutes": 120,
+  "sources": {
+    "taxi": {
+      "required_fields": ["ride_id", "timestamp", "pickup_zone", "dropoff_zone", "passenger_count"],
+      "unique_key": ["ride_id", "timestamp"],
+      "delay_check": true,
+      "numeric_ranges": {
+        "passenger_count": {"min": 0, "max": 8}
+      }
+    },
+    "metro": {
+      "required_fields": ["train_id", "timestamp", "station", "line", "occupancy_pct"],
+      "unique_key": ["train_id", "timestamp"],
+      "delay_check": true,
+      "numeric_ranges": {
+        "occupancy_pct": {"min": 0, "max": 100}
+      }
+    },
+    "weather": {
+      "required_fields": ["station_id", "timestamp", "temperature_c", "precip_mm", "wind_kph"],
+      "unique_key": ["station_id", "timestamp"],
+      "delay_check": true,
+      "numeric_ranges": {
+        "precip_mm": {"min": 0, "max": 500},
+        "wind_kph": {"min": 0, "max": 250}
+      }
+    },
+    "event": {
+      "required_fields": ["event_id", "timestamp", "location", "category", "expected_attendance"],
+      "unique_key": ["event_id", "timestamp"],
+      "delay_check": false,
+      "numeric_ranges": {
+        "expected_attendance": {"min": 0, "max": 200000}
+      }
+    }
+  }
+}

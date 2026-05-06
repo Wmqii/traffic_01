@@ -1,0 +1,311 @@
+﻿# 多 Agent 执行总控手册（已启动）
+
+## 1. 执行目标
+- 按现有清单分阶段推进 M1~M5。
+- 每阶段必须经过测试门禁后再进入下一阶段。
+- 所有工作过程必须日志留痕，可审计、可回溯。
+
+## 2. 执行组织
+- 总控：PM-Agent（节奏、依赖、风险、验收推进）
+- 执行：Data/Algo/Backend/Frontend/Test/Ops/Doc Agents
+- 门禁：Test-Agent（技术门禁）+ PM-Agent（业务门禁）
+
+## 3. 阶段节奏
+- M1（2026-03-30 ~ 2026-04-12）：治理基线与协作框架
+- M2（2026-04-13 ~ 2026-05-03）：数据链路与MVP能力
+- M3（2026-05-04 ~ 2026-05-24）：核心能力增强与高级图表
+- M4（2026-05-25 ~ 2026-06-07）：性能安全与发布准备
+- M5（2026-06-08 ~ 2026-06-21）：UAT、上线、复盘
+
+## 4. 阶段准入/准出规则
+- 准入：上一阶段“必交付项”全部完成，且门禁测试通过。
+- 准出：
+  - 所属阶段 Jira 任务完成率 >= 95%
+  - 阶段测试门禁全绿（详见 `02_阶段检验与测试门禁.md`）
+  - 阶段日志完整（worklog/testlog/releaselog）
+  - 形成阶段总结记录（由 Doc-Agent 汇总）
+
+## 5. 日志留痕要求
+- 每个 Agent 每天至少 1 条 worklog。
+- 每次测试执行必须写 testlog（含结论与证据路径）。
+- 每次环境变更/发布动作必须写 releaselog。
+- 日志目录：`execution/logs/`
+
+## 6. 当前启动批次（M5）
+- PM-Agent：M5-UAT/M5-REL 已完成，阶段收口完成。
+- Doc-Agent：C1-3/C1-4 已完成并归档。
+- Test-Agent：M5 门禁校验全部通过。
+- Ops-Agent：发布说明与发布清单完成，进入发布窗口执行准备。
+
+## 7. 升级与阻塞机制
+- 阻塞超过 4 小时：责任 Agent 在 worklog 标记 `BLOCKED` 并@PM-Agent。
+- 阻塞超过 24 小时：PM-Agent 发起升级会议，调整依赖与优先级。
+- 影响里程碑：更新 Jira 并写入 releaselog。
+
+## 8. 文件索引
+- `execution/01_分阶段执行计划.md`
+- `execution/02_阶段检验与测试门禁.md`
+- `execution/logs/README.md`
+- `execution/logs/worklog.csv`
+- `execution/logs/testlog.csv`
+- `execution/logs/releaselog.csv`
+- `execution/m1/G1-1_项目章程与里程碑冻结_v1.0.md`
+- `execution/m1/G1-2_需求基线与变更流程_v1.0.md`
+- `execution/m1/G1-3_多Agent协作机制_v1.0.md`
+- `execution/m1/M1_评审记录_2026-03-26.md`
+- `execution/m1/G1-4_周例会机制与风险台账_v1.0.md`
+- `execution/m1/G1-4_风险台账.csv`
+- `execution/m1/G1-4_周例会记录模板.md`
+- `execution/m1/M1_评审记录_2026-03-26_第2轮.md`
+- `execution/m1/O1-1_CICD基线与制品管理_v1.0.md`
+- `execution/m1/O1-1_验证记录_2026-03-26.md`
+- `execution/m1/M1_评审记录_2026-03-26_第3轮.md`
+- `.github/workflows/ci.yml`
+- `.github/workflows/release_docs.yml`
+- `scripts/ci/smoke_check.ps1`
+- `ops/artifacts/artifact_manifest_v1.json`
+- `execution/04_M2启动批次任务板.csv`
+- `execution/m2/D1-1_数据源接入实施说明_v1.0.md`
+- `execution/m2/D1-1_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第1轮.md`
+- `data-pipeline/ingest/config/data_sources.sample.yaml`
+- `data-pipeline/ingest/scripts/ingest_runner.py`
+- `data-pipeline/ingest/staging/ingest_report.json`
+- `execution/m2/D1-2_数据治理规则实施说明_v1.0.md`
+- `execution/m2/D1-2_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第2轮.md`
+- `data-pipeline/governance/config/governance_rules.json`
+- `data-pipeline/governance/scripts/governance_runner.py`
+- `data-pipeline/governance/output/governance_report_normal.json`
+- `data-pipeline/governance/output/governance_report_demo.json`
+- `data-pipeline/governance/output/rejects_demo/*.csv`
+- `execution/m2/D1-3_地图匹配与时空对齐实施说明_v1.0.md`
+- `execution/m2/D1-3_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第3轮.md`
+- `data-pipeline/alignment/config/spatial_mapping.json`
+- `data-pipeline/alignment/scripts/alignment_runner.py`
+- `data-pipeline/alignment/output/alignment_report.json`
+- `execution/m2/D1-4_特征工程管道实施说明_v1.0.md`
+- `execution/m2/D1-4_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第4轮.md`
+- `data-pipeline/features/config/feature_spec.json`
+- `data-pipeline/features/scripts/feature_runner.py`
+- `data-pipeline/features/output/feature_table.csv`
+- `data-pipeline/features/output/feature_report.json`
+- `execution/m2/D1-5_数据质量监控与评分看板实施说明_v1.0.md`
+- `execution/m2/D1-5_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第5轮.md`
+- `data-pipeline/quality/config/quality_rules.json`
+- `data-pipeline/quality/scripts/quality_runner.py`
+- `data-pipeline/quality/output/quality_scoreboard.csv`
+- `data-pipeline/quality/output/quality_report.json`
+- `data-pipeline/quality/output/quality_dashboard_echarts.json`
+- `execution/m2/A1-1_基线模型训练与评估实施说明_v1.0.md`
+- `execution/m2/A1-1_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第6轮.md`
+- `model/baseline/scripts/train_baseline.py`
+- `model/baseline/output/metrics.json`
+- `model/baseline/output/predictions.csv`
+- `execution/m2/B1-1_核心API实施说明_v1.0.md`
+- `execution/m2/B1-1_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第7轮.md`
+- `execution/m2/B1-2_认证鉴权实施说明_v1.0.md`
+- `execution/m2/B1-2_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第8轮.md`
+- `backend/app.py`
+- `backend/auth.py`
+- `backend/data.py`
+- `backend/openapi.json`
+- `frontend/index.html`
+- `frontend/assets/app.js`
+- `frontend/assets/styles.css`
+- `frontend/README.md`
+- `frontend/smoke_result.json`
+- `execution/m2/F1-1_页面骨架实施说明_v1.0.md`
+- `execution/m2/F1-1_验证记录_2026-03-27.md`
+- `execution/m2/F1-2_WebGIS图层实施说明_v1.0.md`
+- `execution/m2/F1-2_验证记录_2026-03-27.md`
+- `execution/m2/O1-2_环境部署实施说明_v1.0.md`
+- `execution/m2/O1-2_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第9轮.md`
+- `execution/m2/M2_评审记录_2026-03-27_第10轮.md`
+- `execution/m2/M2_评审记录_2026-03-27_第11轮.md`
+- `ops/README.md`
+- `ops/environments/dev.env`
+- `ops/environments/test.env`
+- `ops/environments/prod.env`
+- `ops/scripts/deploy_env.ps1`
+- `ops/scripts/smoke_api.ps1`
+- `ops/scripts/start_env.ps1`
+- `ops/scripts/stop_env.ps1`
+- `ops/docker/docker-compose.dev.yml`
+- `ops/docker/docker-compose.test.yml`
+- `ops/docker/docker-compose.prod.yml`
+- `ops/artifacts/o1_2_smoke_dev.json`
+- `ops/artifacts/o1_2_smoke_test.json`
+- `ops/artifacts/o1_2_smoke_prod.json`
+- `execution/05_M3启动批次任务板.csv`
+- `execution/m3/A1-2_深度模型训练与评估实施说明_v1.0.md`
+- `execution/m3/A1-2_验证记录_2026-03-27.md`
+- `execution/m3/B1-3_缓存与异步任务实施说明_v1.0.md`
+- `execution/m3/B1-3_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第1轮.md`
+- `execution/m3/M3_评审记录_2026-03-27_第2轮.md`
+- `model/deep/scripts/train_deep_models.py`
+- `model/deep/README.md`
+- `model/deep/output/metrics.json`
+- `model/deep/output/predictions.csv`
+- `model/deep/output/model_report.md`
+- `backend/cache.py`
+- `backend/tasks.py`
+- `execution/m3/F1-3_高级图表实施说明_v1.0.md`
+- `execution/m3/F1-3_验证记录_2026-03-27.md`
+- `execution/m3/F1-4_地图图表筛选联动实施说明_v1.0.md`
+- `execution/m3/F1-4_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第3轮.md`
+- `execution/m3/M3_评审记录_2026-03-27_第4轮.md`
+- `frontend/m3_f1_smoke.json`
+- `execution/m3/F1-5_导出能力实施说明_v1.0.md`
+- `execution/m3/F1-5_验证记录_2026-03-27.md`
+- `execution/m3/T1-1_测试计划与用例基线_v1.0.md`
+- `execution/m3/T1-1_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第5轮.md`
+- `execution/m3/M3_评审记录_2026-03-27_第6轮.md`
+- `frontend/m3_f1_5_smoke.json`
+- `backend/tests/__init__.py`
+- `backend/tests/api_automation_runner.py`
+- `backend/tests/output/t1_2_api_test_result.json`
+- `execution/m3/T1-2_接口自动化测试实施说明_v1.0.md`
+- `execution/m3/T1-2_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第7轮.md`
+- `execution/m3/C1-1_接口文档OpenAPI基线_v1.0.md`
+- `execution/m3/C1-1_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第8轮.md`
+- `frontend/tests/t1_3_e2e_runner.py`
+- `frontend/tests/output/t1_3_e2e_result.json`
+- `frontend/tests/output/t1_3_backend_server.log`
+- `frontend/tests/output/t1_3_frontend_server.log`
+- `execution/m3/T1-3_前端E2E测试实施说明_v1.0.md`
+- `execution/m3/T1-3_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第9轮.md`
+- `execution/m3/C1-2_数据字典与模型卡_v1.0.md`
+- `execution/m3/C1-2_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第10轮.md`
+- `execution/06_M4启动批次任务板.csv`
+- `backend/tests/performance_runner.py`
+- `backend/tests/output/t1_4_perf_result.json`
+- `execution/m4/T1-4_性能压测实施说明_v1.0.md`
+- `execution/m4/T1-4_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第1轮.md`
+- `execution/m4/t1_5_quality_gate_runner.py`
+- `execution/m4/output/t1_5_quality_gate_result.json`
+- `execution/m4/T1-5_回归测试与质量门禁报告_v1.0.md`
+- `execution/m4/T1-5_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第2轮.md`
+- `ops/monitoring/alert_rules.json`
+- `ops/scripts/monitoring_check.ps1`
+- `ops/artifacts/o1_3_monitor_dev.json`
+- `ops/artifacts/o1_3_monitor_dashboard_dev.json`
+- `execution/m4/O1-3_监控告警实施说明_v1.0.md`
+- `execution/m4/O1-3_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第3轮.md`
+- `ops/scripts/gray_release_drill.ps1`
+- `ops/artifacts/o1_4_gray_release_drill_dev.json`
+- `execution/m4/O1-4_灰度发布与回滚预案实施说明_v1.0.md`
+- `execution/m4/O1-4_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第4轮.md`
+- `ops/scripts/o1_5_runbook_drill.ps1`
+- `ops/runbooks/o1_5_runbook_v1.0.md`
+- `ops/runbooks/o1_5_incident_plan_v1.0.md`
+- `ops/artifacts/o1_5_runbook_drill_dev.json`
+- `execution/m4/O1-5_运行手册与应急预案实施说明_v1.0.md`
+- `execution/m4/O1-5_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第5轮.md`
+- `backend/model_registry.py`
+- `backend/tests/b1_4_scheduler_runner.py`
+- `backend/tests/output/b1_4_scheduler_result.json`
+- `model/registry/model_registry.json`
+- `execution/m4/B1-4_调度接口实施说明_v1.0.md`
+- `execution/m4/B1-4_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第6轮.md`
+- `backend/audit.py`
+- `backend/error_codes.py`
+- `backend/tests/b1_5_audit_error_runner.py`
+- `backend/tests/output/b1_5_audit_error_result.json`
+- `backend/logs/audit.log`
+- `execution/m4/B1-5_审计日志与错误码规范实施说明_v1.0.md`
+- `execution/m4/B1-5_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第7轮.md`
+- `backend/tests/a1_6_model_rollback_runner.py`
+- `model/registry/a1_6_rollback_result.json`
+- `execution/m4/A1-6_模型版本管理与回滚策略实施说明_v1.0.md`
+- `execution/m4/A1-6_验证记录_2026-03-27.md`
+- `execution/m4/M4_评审记录_2026-03-27_第8轮.md`
+- `execution/m4/M4_阶段收口总结_2026-03-27.md`
+- `execution/07_M5启动批次任务板.csv`
+- `execution/m5/M5_入口检查与启动说明_v1.0.md`
+- `execution/m5/M5_验证记录_2026-03-27_第1轮.md`
+- `execution/m5/M5_评审记录_2026-03-27_第1轮.md`
+- `execution/m5/C1-3_用户手册与运维手册_v1.0.md`
+- `execution/m5/C1-3_培训材料提纲_v1.0.md`
+- `execution/m5/c1_3_doc_check.py`
+- `execution/m5/output/c1_3_doc_check_result.json`
+- `execution/m5/C1-3_验证记录_2026-03-27.md`
+- `execution/m5/M5_评审记录_2026-03-27_第2轮.md`
+- `execution/m5/C1-4_验收报告与项目复盘_v1.0.md`
+- `execution/m5/c1_4_doc_check.py`
+- `execution/m5/output/c1_4_doc_check_result.json`
+- `execution/m5/C1-4_验证记录_2026-03-27.md`
+- `execution/m5/M5_评审记录_2026-03-27_第3轮.md`
+- `execution/m5/M5-UAT_验收报告_v1.0.md`
+- `execution/m5/m5_uat_check.py`
+- `execution/m5/output/m5_uat_check_result.json`
+- `execution/m5/M5-UAT_验证记录_2026-03-27.md`
+- `execution/m5/M5_评审记录_2026-03-27_第4轮.md`
+- `execution/m5/M5-REL_上线版本与发布说明_v1.0.md`
+- `execution/m5/m5_rel_check.py`
+- `execution/m5/output/m5_rel_check_result.json`
+- `execution/m5/M5-REL_验证记录_2026-03-27.md`
+- `ops/artifacts/m5_release_manifest_v1.json`
+- `execution/m5/M5_评审记录_2026-03-27_第5轮.md`
+- `execution/m5/M5_阶段收口总结_2026-03-27.md`
+
+## 9. 最终收口状态（FINAL）
+- PM-Agent：已完成项目总交付清单与终验评审闭环。
+- Doc-Agent：已完成最终验收签字页归档。
+- Test-Agent：已完成终验证据包校验（PASS）。
+- 项目状态：`ARCHIVED`（主线交付完成，进入迭代维护）。
+
+## 10. 最终收口索引（增量）
+- `execution/08_FINAL项目收口任务板.csv`
+- `execution/final/final_delivery_manifest_2026-03-27.md`
+- `execution/final/final_signoff_sheet_v1.0.md`
+- `execution/final/final_acceptance_check.py`
+- `execution/final/final_verification_record_2026-03-27.md`
+- `execution/final/output/final_acceptance_bundle.json`
+- `execution/m5/M5_评审记录_2026-03-27_第6轮.md`
+
+## 11. 增量遗留项收口（2026-03-27）
+- Data-Agent：完成 M2 核心数据库表结构（DDL/索引/分区）并通过结构校验。
+- Algo-Agent：完成 A1-3（STGNN）、A1-4（规则标定）、A1-5（归因分析）并通过校验。
+- PM-Agent：完成第7轮评审，确认遗留项清零。
+- 项目状态：`COMPLETE`。
+
+## 12. 增量收口索引
+- `execution/m2/M2_核心数据库表结构实施说明_v1.0.md`
+- `execution/m2/M2_核心数据库表结构_验证记录_2026-03-27.md`
+- `execution/m2/M2_评审记录_2026-03-27_第12轮.md`
+- `data-pipeline/schema/output/core_schema_ddl.sql`
+- `data-pipeline/schema/output/schema_check_result.json`
+- `execution/m3/A1-3_时空模型训练与评估实施说明_v1.0.md`
+- `execution/m3/A1-3_验证记录_2026-03-27.md`
+- `execution/m3/A1-4_拥堵识别规则与参数标定实施说明_v1.0.md`
+- `execution/m3/A1-4_验证记录_2026-03-27.md`
+- `execution/m3/A1-5_归因分析实施说明_v1.0.md`
+- `execution/m3/A1-5_验证记录_2026-03-27.md`
+- `execution/m3/M3_评审记录_2026-03-27_第11轮.md`
+- `execution/m3/M3_评审记录_2026-03-27_第12轮.md`
+- `execution/m3/M3_评审记录_2026-03-27_第13轮.md`
+- `execution/m5/M5_评审记录_2026-03-27_第7轮.md`
+- `execution/08_FINAL项目收口任务板.csv`
+- `execution/final/output/final_acceptance_bundle.json`

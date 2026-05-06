@@ -1,0 +1,170 @@
+{
+  "project": "traffic-congestion-analysis-system",
+  "date": "2026-03-27",
+  "phase": "FINAL",
+  "summary": {
+    "pass": true,
+    "total": 27,
+    "passed": 27,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "exists::m2_board",
+      "ok": true,
+      "detail": "execution\\04_M2启动批次任务板.csv"
+    },
+    {
+      "name": "exists::m3_board",
+      "ok": true,
+      "detail": "execution\\05_M3启动批次任务板.csv"
+    },
+    {
+      "name": "exists::m4_close",
+      "ok": true,
+      "detail": "execution\\m4\\M4_阶段收口总结_2026-03-27.md"
+    },
+    {
+      "name": "exists::m5_close",
+      "ok": true,
+      "detail": "execution\\m5\\M5_阶段收口总结_2026-03-27.md"
+    },
+    {
+      "name": "exists::m5_review_round6",
+      "ok": true,
+      "detail": "execution\\m5\\M5_评审记录_2026-03-27_第6轮.md"
+    },
+    {
+      "name": "exists::final_manifest",
+      "ok": true,
+      "detail": "execution\\final\\final_delivery_manifest_2026-03-27.md"
+    },
+    {
+      "name": "exists::final_signoff",
+      "ok": true,
+      "detail": "execution\\final\\final_signoff_sheet_v1.0.md"
+    },
+    {
+      "name": "exists::m5_board",
+      "ok": true,
+      "detail": "execution\\07_M5启动批次任务板.csv"
+    },
+    {
+      "name": "exists::m5_uat_check",
+      "ok": true,
+      "detail": "execution\\m5\\output\\m5_uat_check_result.json"
+    },
+    {
+      "name": "exists::m5_rel_check",
+      "ok": true,
+      "detail": "execution\\m5\\output\\m5_rel_check_result.json"
+    },
+    {
+      "name": "exists::c1_3_check",
+      "ok": true,
+      "detail": "execution\\m5\\output\\c1_3_doc_check_result.json"
+    },
+    {
+      "name": "exists::c1_4_check",
+      "ok": true,
+      "detail": "execution\\m5\\output\\c1_4_doc_check_result.json"
+    },
+    {
+      "name": "exists::schema_check",
+      "ok": true,
+      "detail": "data-pipeline\\schema\\output\\schema_check_result.json"
+    },
+    {
+      "name": "exists::a1_3_check",
+      "ok": true,
+      "detail": "model\\stgnn\\output\\stgnn_check_result.json"
+    },
+    {
+      "name": "exists::a1_4_check",
+      "ok": true,
+      "detail": "model\\congestion_rules\\output\\rules_check_result.json"
+    },
+    {
+      "name": "exists::a1_5_check",
+      "ok": true,
+      "detail": "model\\attribution\\output\\attribution_check_result.json"
+    },
+    {
+      "name": "m2_board_all_done",
+      "ok": true,
+      "detail": "execution\\04_M2启动批次任务板.csv"
+    },
+    {
+      "name": "m3_board_all_done",
+      "ok": true,
+      "detail": "execution\\05_M3启动批次任务板.csv"
+    },
+    {
+      "name": "m5_board_all_done",
+      "ok": true,
+      "detail": "execution\\07_M5启动批次任务板.csv"
+    },
+    {
+      "name": "summary_pass::m5_uat_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 10, \"passed\": 10, \"failed\": 0}"
+    },
+    {
+      "name": "summary_pass::m5_rel_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 10, \"passed\": 10, \"failed\": 0}"
+    },
+    {
+      "name": "summary_pass::c1_3_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 15, \"passed\": 15, \"failed\": 0}"
+    },
+    {
+      "name": "summary_pass::c1_4_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 14, \"passed\": 14, \"failed\": 0}"
+    },
+    {
+      "name": "summary_pass::schema_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 14, \"passed\": 14, \"failed\": 0}"
+    },
+    {
+      "name": "summary_pass::a1_3_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 7, \"passed\": 7, \"failed\": 0}"
+    },
+    {
+      "name": "summary_pass::a1_4_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 7, \"passed\": 7, \"failed\": 0}"
+    },
+    {
+      "name": "summary_pass::a1_5_check",
+      "ok": true,
+      "detail": "{\"pass\": true, \"total\": 5, \"passed\": 5, \"failed\": 0}"
+    }
+  ],
+  "evidence": {
+    "m4_close": "execution/m4/M4_阶段收口总结_2026-03-27.md",
+    "m5_close": "execution/m5/M5_阶段收口总结_2026-03-27.md",
+    "m5_review_round6": "execution/m5/M5_评审记录_2026-03-27_第6轮.md",
+    "final_manifest": "execution/final/final_delivery_manifest_2026-03-27.md",
+    "final_signoff": "execution/final/final_signoff_sheet_v1.0.md",
+    "m2_board": "execution/04_M2启动批次任务板.csv",
+    "m3_board": "execution/05_M3启动批次任务板.csv",
+    "m5_board": "execution/07_M5启动批次任务板.csv",
+    "m5_checks": [
+      "execution/m5/output/c1_3_doc_check_result.json",
+      "execution/m5/output/c1_4_doc_check_result.json",
+      "execution/m5/output/m5_uat_check_result.json",
+      "execution/m5/output/m5_rel_check_result.json"
+    ],
+    "incremental_checks": [
+      "data-pipeline/schema/output/schema_check_result.json",
+      "model/stgnn/output/stgnn_check_result.json",
+      "model/congestion_rules/output/rules_check_result.json",
+      "model/attribution/output/attribution_check_result.json"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": "v1.0",
+  "timezone": "Asia/Shanghai",
+  "window_minutes": 15,
+  "peak_hours": [7, 8, 9, 17, 18, 19],
+  "lag_steps": [1],
+  "external_features": {
+    "event_metric_name": "expected_attendance",
+    "weather_metric_name": "precip_mm"
+  }
+}
+

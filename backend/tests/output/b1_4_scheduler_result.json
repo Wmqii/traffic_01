@@ -1,0 +1,148 @@
+{
+  "checks": [
+    {
+      "name": "login_viewer",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_viewer_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_analyst",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_analyst_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_admin",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_admin_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_health_viewer_403",
+      "ok": true,
+      "status": 403,
+      "detail": ""
+    },
+    {
+      "name": "model_retrain_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_retrain_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_retrain_task_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "model_retrain_candidate_present",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001412"
+    },
+    {
+      "name": "model_publish_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_publish_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_publish_task_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "model_publish_active_version",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001412"
+    },
+    {
+      "name": "model_health_sync_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_health_sync_healthy",
+      "ok": true,
+      "status": 200,
+      "detail": "healthy"
+    },
+    {
+      "name": "model_health_task_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_health_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_health_task_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "model_registry_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "model_registry_active_match",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001412 vs gru-20260327001412"
+    },
+    {
+      "name": "model_registry_has_candidates_field",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 23,
+    "passed": 23,
+    "failed": 0
+  }
+}

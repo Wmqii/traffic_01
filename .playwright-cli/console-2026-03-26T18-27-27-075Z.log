@@ -1,0 +1,13 @@
+[    2038ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/map/layers/heat' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[    2039ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/map/layers/heat:0
+[    2061ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/congestion/events' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[    2061ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/congestion/events:0
+[    2063ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/predictions/segments/SEG-4001' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[    2064ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/predictions/segments/SEG-4001:0
+[    2067ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/attributions/events/event-bridge' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[    2067ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/attributions/events/event-bridge:0
+[    2069ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/admin/audit' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[    2070ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/admin/audit:0
+[   29074ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://a.tile.openstreetmap.org/12/3430/1673.png:0
+[   34530ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://c.tile.openstreetmap.org/12/3429/1673.png:0
+[   34536ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:5500/favicon.ico:0

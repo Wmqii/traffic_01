@@ -1,0 +1,5 @@
+﻿"phase","task_id","summary","owner_agent","status","start_date","due_date","dependency","notes"
+"M5","C1-3","用户手册与运维手册","Doc-Agent","Done","2026-06-08","2026-06-21","O1-5,B1-5","execution/m5/C1-3_用户手册与运维手册_v1.0.md; execution/m5/C1-3_培训材料提纲_v1.0.md; execution/m5/C1-3_验证记录_2026-03-27.md; execution/m5/M5_评审记录_2026-03-27_第2轮.md; execution/m5/output/c1_3_doc_check_result.json"
+"M5","C1-4","验收报告与项目复盘","Doc-Agent","Done","2026-06-08","2026-06-21","C1-3,T1-5","execution/m5/C1-4_验收报告与项目复盘_v1.0.md; execution/m5/C1-4_验证记录_2026-03-27.md; execution/m5/M5_评审记录_2026-03-27_第3轮.md; execution/m5/output/c1_4_doc_check_result.json"
+"M5","M5-UAT","UAT 验收报告","PM-Agent","Done","2026-06-08","2026-06-21","C1-3,T1-5,O1-5","execution/m5/M5-UAT_验收报告_v1.0.md; execution/m5/M5-UAT_验证记录_2026-03-27.md; execution/m5/M5_评审记录_2026-03-27_第4轮.md; execution/m5/output/m5_uat_check_result.json"
+"M5","M5-REL","上线版本与发布说明","PM-Agent","Done","2026-06-08","2026-06-21","M5-UAT,C1-4","execution/m5/M5-REL_上线版本与发布说明_v1.0.md; execution/m5/M5-REL_验证记录_2026-03-27.md; execution/m5/M5_评审记录_2026-03-27_第5轮.md; execution/m5/output/m5_rel_check_result.json; ops/artifacts/m5_release_manifest_v1.json"

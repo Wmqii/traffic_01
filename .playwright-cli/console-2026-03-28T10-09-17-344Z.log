@@ -1,0 +1,14 @@
+[   32122ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js:0
+[   32165ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:8000/api/v1/map/layers/heat:0
+[   32199ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:8000/api/v1/congestion/events:0
+[   32210ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:8000/api/v1/predictions/segments/SEG-4001:0
+[   32222ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:8000/api/v1/attributions/events/event-bridge:0
+[   32233ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://127.0.0.1:8000/api/v1/admin/audit:0
+[   33593ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:5500/favicon.ico:0
+[   42844ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/api/v1/attributions/events/event-bridge:0
+[   42857ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/api/v1/admin/audit:0
+[   57529ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/api/v1/attributions/events/event-bridge:0
+[   57537ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/api/v1/admin/audit:0
+[   58783ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/api/v1/attributions/events/event-bridge:0
+[   58792ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/api/v1/admin/audit:0
+[   89308ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://a.basemaps.cartocdn.com/light_all/12/3430/1674.png:0

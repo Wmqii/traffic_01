@@ -1,0 +1,69 @@
+﻿{
+    "env":  "dev",
+    "generated_at":  "2026-03-27T07:49:05",
+    "api_base":  "http://127.0.0.1:8000",
+    "release_plan":  {
+                         "rollback_trigger":  "canary success_rate\u003c99% or p95\u003e=1000ms or monitoring critical alert",
+                         "phases":  [
+                                        "candidate_deploy",
+                                        "monitor",
+                                        "canary_probe",
+                                        "rollback_restore_validation"
+                                    ],
+                         "strategy":  "canary_simulation"
+                     },
+    "steps":  [
+                  {
+                      "name":  "candidate_deploy",
+                      "ok":  true,
+                      "detail":  "deploy_env completed for dev",
+                      "data":  null
+                  },
+                  {
+                      "name":  "candidate_monitoring_check",
+                      "ok":  true,
+                      "detail":  "monitoring baseline pass",
+                      "data":  null
+                  },
+                  {
+                      "name":  "canary_probe",
+                      "ok":  true,
+                      "detail":  "health_p95=3.56, biz_p95=4.9",
+                      "data":  {
+                                   "business":  {
+                                                    "count":  20,
+                                                    "success":  20,
+                                                    "success_rate":  1,
+                                                    "p95_ms":  4.9,
+                                                    "avg_ms":  4.05,
+                                                    "max_ms":  5.57,
+                                                    "login_ok":  true
+                                                },
+                                   "health":  {
+                                                  "count":  30,
+                                                  "success":  30,
+                                                  "success_rate":  1,
+                                                  "p95_ms":  3.56,
+                                                  "avg_ms":  2.79,
+                                                  "max_ms":  4.86
+                                              },
+                                   "thresholds":  {
+                                                      "success_rate_ge":  0.99,
+                                                      "p95_ms_lt":  1000
+                                                  }
+                               }
+                  },
+                  {
+                      "name":  "rollback_restore_validation",
+                      "ok":  true,
+                      "detail":  "stop/start + smoke + monitoring completed",
+                      "data":  null
+                  }
+              ],
+    "summary":  {
+                    "pass":  true,
+                    "total_steps":  4,
+                    "passed_steps":  4,
+                    "failed_steps":  0
+                }
+}

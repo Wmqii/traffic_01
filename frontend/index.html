@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>交通流量预测与拥堵成因分析系统</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="side-panel">
+      <h1>交通流量预测与拥堵成因分析</h1>
+      <p class="muted">业务看板（免登录）</p>
+
+      <section class="card">
+        <h2>查询条件</h2>
+        <label for="apiBase">接口地址</label>
+        <input id="apiBase" value="http://127.0.0.1:8005" />
+        <label for="windowSelect">时间窗</label>
+        <select id="windowSelect">
+          <option value="15">近 15 分钟</option>
+          <option value="30">近 30 分钟</option>
+          <option value="60">近 60 分钟</option>
+        </select>
+        <label for="segmentSelect">路段</label>
+        <select id="segmentSelect"></select>
+        <label for="segmentSearch">路段搜索</label>
+        <input id="segmentSearch" placeholder="输入路段关键字，如 1002 / SEG-2" />
+        <div class="inline-actions">
+          <button id="locateSegmentBtn" class="tiny-btn secondary">搜索定位路段</button>
+          <button id="addToCompareBtn" class="tiny-btn">加入多路段对比</button>
+        </div>
+        <p id="segmentSearchHint" class="mini-hint">可输入关键词快速定位目标路段。</p>
+        <button id="refreshBtn">刷新数据</button>
+        <button id="predictNowBtn" class="secondary-btn">预测当前路段</button>
+        <label><input type="checkbox" id="autoToPrediction" checked /> 切换路段后自动打开预测页</label>
+      </section>
+
+      <section class="card">
+        <h2>地图图层</h2>
+        <label><input type="checkbox" id="layerHeat" checked /> 热力层</label>
+        <label><input type="checkbox" id="layerEvents" checked /> 事件层</label>
+        <label><input type="checkbox" id="layerSegments" checked /> 路段层</label>
+      </section>
+
+      <section class="card">
+        <h2>当前选择</h2>
+        <div class="tag-row"><span class="tag-key">路段</span><span id="selectedSegmentTag" class="tag-value">未选择</span></div>
+        <div class="tag-row"><span class="tag-key">状态</span><span id="selectedLevelTag" class="tag-value">未计算</span></div>
+        <div class="tag-row"><span class="tag-key">预测流量</span><span id="selectedPredFlowTag" class="tag-value">-</span></div>
+        <div class="tag-row"><span class="tag-key">预测指数</span><span id="selectedPredIndexTag" class="tag-value">-</span></div>
+        <div class="tag-row"><span class="tag-key">最后刷新</span><span id="selectedUpdatedAtTag" class="tag-value">-</span></div>
+        <p id="dataStatus" class="status">等待加载数据</p>
+      </section>
+    </aside>
+
+    <main class="main-panel">
+      <nav class="top-nav">
+        <button class="tab active" data-page="home">系统首页</button>
+        <button class="tab" data-page="overview">路况总览</button>
+        <button class="tab" data-page="attribution">拥堵归因</button>
+        <button class="tab" data-page="prediction">流量预测</button>
+        <button class="tab" data-page="data">数据说明</button>
+      </nav>
+
+      <section class="page active" id="page-home">
+        <div class="grid-horizontal">
+          <div class="card map-card">
+            <h3>全路段预测地图</h3>
+            <div id="homeMap" class="map"></div>
+          </div>
+          <div class="card table-card">
+            <h3>全路段预测结果</h3>
+            <div id="homePredResultTable" class="table-wrap"></div>
+          </div>
+        </div>
+        <div class="card" id="homeAnalysisCard">
+          <h3>全路段预测分析报表</h3>
+          <div id="homeAnalysisReport" class="summary-box"></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-overview">
+        <div class="kpi-grid" id="kpiGrid"></div>
+        <div class="grid-overview">
+          <div class="card map-card">
+            <h3>地区路况地图（点击路段联动）</h3>
+            <div id="map" class="map"></div>
+          </div>
+          <div class="card">
+            <h3>各路段流量对比（单位：辆/15分钟）</h3>
+            <div id="segmentFlowChart" class="chart"></div>
+          </div>
+          <div class="card full-col">
+            <h3>选中路段流量趋势（横轴：时间）</h3>
+            <div id="segmentTrendChart" class="chart"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-attribution">
+        <div class="grid-two-col">
+          <div class="card">
+            <h3>拥堵原因贡献趋势（%）</h3>
+            <div id="causeTimelineChart" class="chart"></div>
+          </div>
+          <div class="card">
+            <h3>当前路段原因贡献排序（%）</h3>
+            <div id="causeRankingChart" class="chart"></div>
+          </div>
+          <div class="card full-col">
+            <h3>归因结论</h3>
+            <div id="causeSummary" class="summary-box"></div>
+          </div>
+          <div class="card full-col">
+            <h3>关联拥堵事件</h3>
+            <div id="eventTable" class="table-wrap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-prediction">
+        <div id="predictionFocusBanner" class="card focus-banner"></div>
+        <div id="predictionQuickBrief" class="card quick-brief"></div>
+        <div class="kpi-grid" id="predictionMetricCards"></div>
+        <div class="grid-two-col">
+          <div class="card full-col">
+            <h3>多路段未来拥堵趋势对比</h3>
+            <div class="compare-toolbar">
+              <select id="compareSegmentSelect" multiple size="4"></select>
+              <button id="applyCompareBtn" class="tiny-btn">更新对比</button>
+              <span id="compareStatus" class="mini-label">等待加载对比数据</span>
+            </div>
+            <div id="multiSegmentCompareChart" class="chart"></div>
+          </div>
+          <div class="card">
+            <h3>预测拥堵空间分布（点击路段联动）</h3>
+            <div class="prediction-map-toolbar">
+              <div class="prediction-map-controls">
+                <button id="predMapPlayBtn" class="tiny-btn">播放</button>
+                <button id="predMapPauseBtn" class="tiny-btn secondary">暂停</button>
+                <input id="predMapFrame" type="range" min="0" max="7" value="0" />
+                <span id="predMapFrameLabel" class="mini-label">第1帧</span>
+              </div>
+              <div class="prediction-map-legend">
+                <span><i class="legend-dot legend-ok"></i>畅通</span>
+                <span><i class="legend-dot legend-slow"></i>缓行</span>
+                <span><i class="legend-dot legend-jam"></i>拥堵</span>
+                <span><i class="legend-dot legend-heavy"></i>严重拥堵</span>
+              </div>
+            </div>
+            <div id="predictionMap" class="mini-map"></div>
+          </div>
+          <div class="card">
+            <h3>模型误差对比（MAPE%）</h3>
+            <div id="modelErrorCompareChart" class="chart"></div>
+          </div>
+          <div class="card">
+            <h3>全路段未来一时窗拥堵预测排名</h3>
+            <div id="allSegmentPredChart" class="chart"></div>
+          </div>
+          <div class="card">
+            <h3>未来流量预测（单位：辆/15分钟）</h3>
+            <div id="futureFlowChart" class="chart"></div>
+          </div>
+          <div class="card">
+            <h3>历史真实值 vs 预测值（回看窗口）</h3>
+            <div id="compareChart" class="chart"></div>
+          </div>
+          <div class="card full-col">
+            <h3>预测误差趋势（柱：MAE分点值；线：APE%）</h3>
+            <div id="errorChart" class="chart"></div>
+          </div>
+          <div class="card full-col">
+            <h3>未来拥堵等级明细</h3>
+            <div id="predictionDetailTable" class="table-wrap"></div>
+          </div>
+          <div class="card full-col">
+            <h3>全路段预测明细（点击切换路段）</h3>
+            <div id="allSegmentPredTable" class="table-wrap"></div>
+          </div>
+          <div class="card full-col">
+            <h3>路段预测分析报表</h3>
+            <div id="analysisReport" class="summary-box"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-data">
+        <div class="card prose">
+          <h3>数据来源与口径</h3>
+          <ul>
+            <li>交通流量与路段特征来源：项目内公开样例数据（feature_table.csv）。</li>
+            <li>归因维度：天气、节假日、交通事故、其他。</li>
+            <li>流量单位：辆/15分钟（flow_veh_15m）。</li>
+            <li>拥堵指数范围：0~1，分级规则：畅通(&lt;0.35)、缓行(0.35~0.60)、拥堵(0.60~0.80)、严重拥堵(&gt;=0.80)。</li>
+            <li>误差指标：MAE（平均绝对误差）、MAPE（平均绝对百分比误差）、RMSE（均方根误差）。</li>
+          </ul>
+          <h3>交互说明</h3>
+          <ul>
+            <li>可通过左侧“路段”选择器切换分析对象。</li>
+            <li>可在地图点击路段线，触发全页面联动。</li>
+            <li>可切换时间窗（15/30/60分钟）查看趋势变化。</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js" onerror="this.onerror=null;this.src='https://cdn.bootcdn.net/ajax/libs/echarts/5.5.0/echarts.min.js'"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" onerror="this.onerror=null;this.src='https://cdn.bootcdn.net/ajax/libs/leaflet/1.9.4/leaflet.js'"></script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

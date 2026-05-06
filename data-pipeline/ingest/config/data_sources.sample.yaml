@@ -1,0 +1,21 @@
+sources:
+  - name: taxi
+    type: taxi
+    description: Ride data from street taxis
+    sample_path: ../samples/taxi.csv
+    schema: ../schemas/taxi.json
+  - name: metro
+    type: metro
+    description: Train ridership snapshots
+    sample_path: ../samples/metro.csv
+    schema: ../schemas/metro.json
+  - name: weather
+    type: weather
+    description: Weather station readings tied to transport corridors
+    sample_path: ../samples/weather.csv
+    schema: ../schemas/weather.json
+  - name: event
+    type: event
+    description: Planned city events that influence congestion
+    sample_path: ../samples/event.csv
+    schema: ../schemas/event.json

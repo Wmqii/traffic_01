@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "name": "summary_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\attribution\\output\\attribution_summary.json"
+    },
+    {
+      "name": "shap_like_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\attribution\\output\\shap_like_values.csv"
+    },
+    {
+      "name": "card_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\attribution\\output\\model_card.md"
+    },
+    {
+      "name": "global_top_non_empty",
+      "ok": true,
+      "detail": "10"
+    },
+    {
+      "name": "sample_explanations_non_empty",
+      "ok": true,
+      "detail": "5"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  }
+}

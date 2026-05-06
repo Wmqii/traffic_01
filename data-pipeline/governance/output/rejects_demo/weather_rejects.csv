@@ -1,0 +1,2 @@
+station_id,timestamp,temperature_c,precip_mm,wind_kph,reject_reasons
+ws-001,2026-03-25T00:00:00Z,12.4,0.0,5.6,delay:late_record

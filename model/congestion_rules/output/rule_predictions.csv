@@ -1,0 +1,13 @@
+row_index,metric_name,metric_sum,rule_hit,threshold
+0,expected_attendance,5200.0,0,7760.0
+1,expected_attendance,18000.0,1,7760.0
+2,expected_attendance,2200.0,0,7760.0
+3,occupancy_pct,68.0,0,69.2
+4,occupancy_pct,74.0,1,69.2
+5,occupancy_pct,63.0,0,69.2
+6,passenger_count,2.0,0,2.2
+7,passenger_count,1.0,0,2.2
+8,passenger_count,3.0,1,2.2
+9,precip_mm,0.0,0,0.07999999999999999
+10,precip_mm,0.4,1,0.07999999999999999
+11,precip_mm,0.0,0,0.07999999999999999

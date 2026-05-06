@@ -1,0 +1,59 @@
+{
+  "run_started_at": "2026-03-26T15:24:11.874115+00:00",
+  "run_completed_at": "2026-03-26T15:24:11.884217+00:00",
+  "total_samples": 4,
+  "entries": [
+    {
+      "source": "samples\\event.csv",
+      "target": "staging\\event.csv",
+      "header": [
+        "event_id",
+        "timestamp",
+        "location",
+        "category",
+        "expected_attendance"
+      ],
+      "row_count": 3,
+      "copied_at": "2026-03-26T15:24:11.877453+00:00"
+    },
+    {
+      "source": "samples\\metro.csv",
+      "target": "staging\\metro.csv",
+      "header": [
+        "train_id",
+        "timestamp",
+        "station",
+        "line",
+        "occupancy_pct"
+      ],
+      "row_count": 3,
+      "copied_at": "2026-03-26T15:24:11.879805+00:00"
+    },
+    {
+      "source": "samples\\taxi.csv",
+      "target": "staging\\taxi.csv",
+      "header": [
+        "ride_id",
+        "timestamp",
+        "pickup_zone",
+        "dropoff_zone",
+        "passenger_count"
+      ],
+      "row_count": 3,
+      "copied_at": "2026-03-26T15:24:11.881993+00:00"
+    },
+    {
+      "source": "samples\\weather.csv",
+      "target": "staging\\weather.csv",
+      "header": [
+        "station_id",
+        "timestamp",
+        "temperature_c",
+        "precip_mm",
+        "wind_kph"
+      ],
+      "row_count": 3,
+      "copied_at": "2026-03-26T15:24:11.884202+00:00"
+    }
+  ]
+}

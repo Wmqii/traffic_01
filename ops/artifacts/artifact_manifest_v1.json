@@ -1,0 +1,24 @@
+{
+  "manifest_version": "v1.0",
+  "project": "traffic-congestion-system",
+  "updated_at": "2026-03-26 23:58:00",
+  "artifacts": [
+    {
+      "name": "execution-assets",
+      "path": "execution/**",
+      "retention_days": 180
+    },
+    {
+      "name": "ci-smoke-result",
+      "path": "ops/artifacts/ci_smoke_result.json",
+      "retention_days": 90
+    },
+    {
+      "name": "release-package",
+      "path": "dist/release-<version>.zip",
+      "retention_days": 365
+    }
+  ],
+  "owner_agent": "Ops-Agent"
+}
+

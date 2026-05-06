@@ -1,0 +1,62 @@
+{
+  "manifest_version": "v1.0",
+  "project": "traffic-congestion-system",
+  "release_version": "traffic-m5-v1.0",
+  "generated_at": "2026-03-27T19:10:00",
+  "phase": "M5",
+  "components": [
+    {
+      "name": "frontend",
+      "path": "frontend/",
+      "capabilities": [
+        "dashboard",
+        "advanced_charts",
+        "map_linkage",
+        "export_center"
+      ]
+    },
+    {
+      "name": "backend",
+      "path": "backend/",
+      "capabilities": [
+        "core_api",
+        "auth_rbac",
+        "cache_async_tasks",
+        "model_scheduler",
+        "audit_error_spec"
+      ]
+    },
+    {
+      "name": "model_registry",
+      "path": "model/registry/model_registry.json",
+      "capabilities": [
+        "publish",
+        "rollback",
+        "health_check"
+      ]
+    },
+    {
+      "name": "ops_runbooks",
+      "path": "ops/runbooks/",
+      "capabilities": [
+        "monitoring_check",
+        "gray_release_drill",
+        "incident_runbook"
+      ]
+    }
+  ],
+  "release_gates": {
+    "m4_all_done": true,
+    "m5_uat_done": true,
+    "tests_green": true,
+    "rollback_plan_ready": true
+  },
+  "evidence": [
+    "execution/m5/M5-UAT_验收报告_v1.0.md",
+    "execution/m5/C1-4_验收报告与项目复盘_v1.0.md",
+    "execution/logs/testlog.csv",
+    "execution/logs/releaselog.csv"
+  ],
+  "owner_agent": "PM-Agent"
+}
+

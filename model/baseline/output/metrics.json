@@ -1,0 +1,34 @@
+{
+  "dataset": {
+    "total_rows": 12,
+    "train_rows": 9,
+    "val_rows": 3,
+    "unique_windows": 6,
+    "train_windows": 4,
+    "val_windows": 2,
+    "feature_table": "D:\\小桌面\\交通拥堵\\data-pipeline\\features\\output\\feature_table.csv"
+  },
+  "models": {
+    "arima": {
+      "order": [
+        1,
+        1,
+        1
+      ],
+      "metrics": {
+        "rmse": 13163.502219296037,
+        "mae": 10684.117496065282,
+        "mape": 119.09859427454023
+      }
+    },
+    "tree": {
+      "type": "sklearn.GradientBoostingRegressor",
+      "dependency": "sklearn.GradientBoostingRegressor (fallback for missing xgboost)",
+      "metrics": {
+        "rmse": 10872.837208271256,
+        "mae": 8442.53319421047,
+        "mape": 99.4349479642476
+      }
+    }
+  }
+}

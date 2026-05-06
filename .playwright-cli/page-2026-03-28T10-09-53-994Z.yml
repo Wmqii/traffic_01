@@ -1,0 +1,96 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - heading "交通智控台" [level=1] [ref=e4]
+    - paragraph [ref=e5]: Traffic Insight Console
+    - generic [ref=e6]:
+      - heading "登录" [level=2] [ref=e7]
+      - generic [ref=e8]: API Base URL
+      - textbox [ref=e9]: http://127.0.0.1:8000
+      - generic [ref=e10]: 账号
+      - textbox [ref=e11]: viewer
+      - generic [ref=e12]: 密码
+      - textbox [ref=e13]: viewer123
+      - generic [ref=e14]:
+        - button "登录" [ref=e15] [cursor=pointer]
+        - button "退出" [ref=e16] [cursor=pointer]
+      - paragraph [ref=e17]: 部分接口不可用，已切换 Mock/Fallback 数据
+    - generic [ref=e18]:
+      - heading "查询条件" [level=2] [ref=e19]
+      - generic [ref=e20]: 时间窗
+      - combobox [ref=e21]:
+        - option "近 15 分钟" [selected]
+        - option "近 30 分钟"
+        - option "近 60 分钟"
+      - generic [ref=e22]: 路段
+      - combobox [ref=e23]:
+        - option "SEG-1001" [selected]
+        - option "SEG-1002"
+        - option "SEG-1003"
+        - option "SEG-2001"
+        - option "SEG-2002"
+        - option "SEG-2003"
+        - option "SEG-3001"
+        - option "SEG-3002"
+        - option "SEG-3003"
+        - option "SEG-4001"
+        - option "SEG-4002"
+        - option "SEG-4003"
+      - generic [ref=e24]: 事件
+      - combobox [ref=e25]:
+        - option "event-bridge" [selected]
+        - option "event-stadium"
+        - option "event-market"
+      - button "刷新数据" [ref=e26] [cursor=pointer]
+    - generic [ref=e27]:
+      - heading "WebGIS 图层" [level=2] [ref=e28]
+      - generic [ref=e29]:
+        - checkbox "热力图层" [checked] [ref=e30]
+        - text: 热力图层
+      - generic [ref=e31]:
+        - checkbox "事件图层" [checked] [ref=e32]
+        - text: 事件图层
+      - generic [ref=e33]:
+        - checkbox "路段图层" [checked] [ref=e34]
+        - text: 路段图层
+    - generic [ref=e35]:
+      - heading "联动状态" [level=2] [ref=e36]
+      - generic [ref=e37]:
+        - generic [ref=e38]: 当前路段
+        - generic [ref=e39]: SEG-1001
+      - generic [ref=e40]:
+        - generic [ref=e41]: 当前事件
+        - generic [ref=e42]: event-bridge
+  - main [ref=e43]:
+    - navigation [ref=e44]:
+      - button "驾驶舱" [ref=e45] [cursor=pointer]
+      - button "实时" [ref=e46] [cursor=pointer]
+      - button "预测" [ref=e47] [cursor=pointer]
+      - button "归因" [ref=e48] [cursor=pointer]
+      - button "管理" [ref=e49] [cursor=pointer]
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e53]: 当前拥堵等级
+          - generic [ref=e54]: Critical
+        - generic [ref=e55]:
+          - generic [ref=e56]: 预测置信度
+          - generic [ref=e57]: 95%
+        - generic [ref=e58]:
+          - generic [ref=e59]: 活跃事件数
+          - generic [ref=e60]: "3"
+        - generic [ref=e61]:
+          - generic [ref=e62]: 15分钟窗最高热力
+          - generic [ref=e63]: "0.89"
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - heading "拥堵热度趋势" [level=3] [ref=e66]
+          - generic [ref=e68]: ECharts unavailable. Showing data in cards/tables only.
+        - generic [ref=e69]:
+          - heading "拥堵驱动雷达" [level=3] [ref=e70]
+          - generic [ref=e72]: ECharts unavailable. Showing data in cards/tables only.
+        - generic [ref=e73]:
+          - heading "路段影响瀑布图" [level=3] [ref=e74]
+          - generic [ref=e76]: ECharts unavailable. Showing data in cards/tables only.
+        - generic [ref=e77]:
+          - heading "路段热力箱线图" [level=3] [ref=e78]
+          - generic [ref=e80]: ECharts unavailable. Showing data in cards/tables only.

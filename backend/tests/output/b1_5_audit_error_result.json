@@ -1,0 +1,148 @@
+{
+  "checks": [
+    {
+      "name": "invalid_login_401",
+      "ok": true,
+      "status": 401,
+      "detail": ""
+    },
+    {
+      "name": "invalid_login_code",
+      "ok": true,
+      "status": 401,
+      "detail": "AUTH_INVALID_CREDENTIALS"
+    },
+    {
+      "name": "invalid_login_request_id_header",
+      "ok": true,
+      "status": 401,
+      "detail": ""
+    },
+    {
+      "name": "login_admin",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_admin_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_analyst",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_analyst_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_viewer",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_viewer_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "viewer_audit_403",
+      "ok": true,
+      "status": 403,
+      "detail": ""
+    },
+    {
+      "name": "viewer_audit_code",
+      "ok": true,
+      "status": 403,
+      "detail": "AUTH_FORBIDDEN"
+    },
+    {
+      "name": "task_not_found_404",
+      "ok": true,
+      "status": 404,
+      "detail": ""
+    },
+    {
+      "name": "task_not_found_code",
+      "ok": true,
+      "status": 404,
+      "detail": "TASK_NOT_FOUND"
+    },
+    {
+      "name": "validation_422",
+      "ok": true,
+      "status": 422,
+      "detail": ""
+    },
+    {
+      "name": "validation_code",
+      "ok": true,
+      "status": 422,
+      "detail": "VALIDATION_ERROR"
+    },
+    {
+      "name": "audit_snapshot_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_snapshot_has_log_file",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_snapshot_recent_count_gt0",
+      "ok": true,
+      "status": 200,
+      "detail": "50"
+    },
+    {
+      "name": "audit_events_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_events_non_empty",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_event_has_request_id",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_event_has_status_code",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_event_has_method_path",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 23,
+    "passed": 23,
+    "failed": 0
+  }
+}

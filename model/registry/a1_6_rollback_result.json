@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "name": "login_admin",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_admin_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_analyst",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_analyst_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "retrain_v1_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "retrain_v1_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "retrain_v1_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "candidate_v1_present",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001354"
+    },
+    {
+      "name": "publish_v1_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "publish_v1_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "publish_v1_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "active_v1_present",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001354"
+    },
+    {
+      "name": "retrain_v2_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "retrain_v2_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "retrain_v2_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "candidate_v2_present",
+      "ok": true,
+      "status": 200,
+      "detail": "lstm-20260327001354"
+    },
+    {
+      "name": "publish_v2_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "publish_v2_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "publish_v2_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "active_v2_present",
+      "ok": true,
+      "status": 200,
+      "detail": "lstm-20260327001354"
+    },
+    {
+      "name": "active_version_changed",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001354->lstm-20260327001354"
+    },
+    {
+      "name": "rollback_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "rollback_task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "rollback_completed",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "rollback_target_applied",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001354 vs gru-20260327001354"
+    },
+    {
+      "name": "registry_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "registry_active_after_rollback",
+      "ok": true,
+      "status": 200,
+      "detail": "gru-20260327001354 vs gru-20260327001354"
+    },
+    {
+      "name": "registry_history_has_rollback",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "health_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "health_status_healthy",
+      "ok": true,
+      "status": 200,
+      "detail": "healthy"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 30,
+    "passed": 30,
+    "failed": 0
+  }
+}

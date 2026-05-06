@@ -1,0 +1,45 @@
+{
+  "checks": [
+    {
+      "name": "config_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\congestion_rules\\output\\calibration_config.json"
+    },
+    {
+      "name": "evaluation_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\congestion_rules\\output\\rule_evaluation.json"
+    },
+    {
+      "name": "predictions_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\congestion_rules\\output\\rule_predictions.csv"
+    },
+    {
+      "name": "report_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\congestion_rules\\output\\rule_report.md"
+    },
+    {
+      "name": "overall_f1_non_negative",
+      "ok": true,
+      "detail": "1.0"
+    },
+    {
+      "name": "overall_precision_non_negative",
+      "ok": true,
+      "detail": "1.0"
+    },
+    {
+      "name": "overall_recall_non_negative",
+      "ok": true,
+      "detail": "1.0"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  }
+}

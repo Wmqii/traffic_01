@@ -1,0 +1,5 @@
+source,total_rows,clean_rows,reject_rows,missing_count,duplicate_count,anomaly_count,delay_count,aligned_rows,feature_rows,completeness_score,validity_score,uniqueness_score,timeliness_score,alignment_score,feature_coverage_score,pipeline_consistency_score,overall_score,grade,status
+event,3,3,0,0,0,0,0,3,3,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,A,PASS
+metro,3,3,0,0,0,0,0,3,3,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,A,PASS
+taxi,3,3,0,0,0,0,0,3,3,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,A,PASS
+weather,3,3,0,0,0,0,0,3,3,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,A,PASS

@@ -1,0 +1,9 @@
+﻿{
+    "backend_pid":  36752,
+    "started_at":  "2026-05-03T15:43:25",
+    "log_dir":  "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\ops\\logs\\dev",
+    "frontend_pid":  14248,
+    "api_url":  "http://127.0.0.1:8000",
+    "frontend_url":  "http://127.0.0.1:5500",
+    "env":  "dev"
+}

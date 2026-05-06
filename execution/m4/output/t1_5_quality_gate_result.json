@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "task_id": "T1-5",
+    "stage": "M4",
+    "run_mode": "quality_gate_aggregate",
+    "timestamp": "2026-03-27 07:26:27"
+  },
+  "steps": [
+    {
+      "step_id": "T1-2_api_automation",
+      "command": "D:\\Users\\cm\\anaconda3\\python.exe backend/tests/api_automation_runner.py",
+      "returncode": 0,
+      "duration_sec": 1.66,
+      "ok": true,
+      "stdout_tail": "{\"pass\": true, \"total\": 28, \"passed\": 28, \"failed\": 0}\nresult_file=backend/tests/output/t1_2_api_test_result.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "step_id": "T1-3_frontend_e2e",
+      "command": "D:\\Users\\cm\\anaconda3\\python.exe frontend/tests/t1_3_e2e_runner.py",
+      "returncode": 0,
+      "duration_sec": 96.67,
+      "ok": true,
+      "stdout_tail": "{\"pass\": true, \"total\": 16, \"passed\": 16, \"failed\": 0}\nresult_file=frontend/tests/output/t1_3_e2e_result.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "step_id": "T1-4_performance_baseline",
+      "command": "D:\\Users\\cm\\anaconda3\\python.exe backend/tests/performance_runner.py",
+      "returncode": 0,
+      "duration_sec": 5.7,
+      "ok": true,
+      "stdout_tail": "{\"pass\": true, \"total_endpoints\": 5, \"failed_gates\": []}\nresult_file=backend/tests/output/t1_4_perf_result.json\n",
+      "stderr_tail": ""
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "evidence": {
+    "t1_2_result": "backend/tests/output/t1_2_api_test_result.json",
+    "t1_3_result": "frontend/tests/output/t1_3_e2e_result.json",
+    "t1_4_result": "backend/tests/output/t1_4_perf_result.json"
+  }
+}

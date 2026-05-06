@@ -1,0 +1,4 @@
+ride_id,timestamp,pickup_zone,dropoff_zone,passenger_count
+taxi-001,2026-03-25T08:15:00Z,Central,Harbor,2
+taxi-002,2026-03-25T08:22:00Z,Harbor,Airport,1
+taxi-003,2026-03-25T08:30:00Z,Airport,Central,3

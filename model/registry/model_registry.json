@@ -1,0 +1,191 @@
+{
+  "updated_at": "2026-03-27T00:14:12.085533+00:00",
+  "active": {
+    "version": "gru-20260327001412",
+    "model_family": "gru",
+    "published_at": "2026-03-27T00:14:12.060126+00:00",
+    "source": "candidate_publish",
+    "metrics": {
+      "rmse": 15170.09375,
+      "mae": 15170.09375,
+      "mape": 689.5497159090909
+    }
+  },
+  "candidates": [
+    {
+      "version": "gru-20260327001412",
+      "model_family": "gru",
+      "trigger": "manual",
+      "dry_run": true,
+      "created_at": "2026-03-27T00:14:12.040503+00:00",
+      "metrics": {
+        "rmse": 15170.09375,
+        "mae": 15170.09375,
+        "mape": 689.5497159090909
+      },
+      "metrics_source": "model/deep/output/metrics.json"
+    },
+    {
+      "version": "lstm-20260327001354",
+      "model_family": "lstm",
+      "trigger": "a1_6",
+      "dry_run": true,
+      "created_at": "2026-03-27T00:13:54.636830+00:00",
+      "metrics": {
+        "rmse": 15579.091796875,
+        "mae": 15579.091796875,
+        "mape": 708.1405362215909
+      },
+      "metrics_source": "model/deep/output/metrics.json"
+    },
+    {
+      "version": "gru-20260327001354",
+      "model_family": "gru",
+      "trigger": "a1_6",
+      "dry_run": true,
+      "created_at": "2026-03-27T00:13:54.605545+00:00",
+      "metrics": {
+        "rmse": 15170.09375,
+        "mae": 15170.09375,
+        "mape": 689.5497159090909
+      },
+      "metrics_source": "model/deep/output/metrics.json"
+    },
+    {
+      "version": "gru-20260327000935",
+      "model_family": "gru",
+      "trigger": "manual",
+      "dry_run": true,
+      "created_at": "2026-03-27T00:09:35.080918+00:00",
+      "metrics": {
+        "rmse": 15170.09375,
+        "mae": 15170.09375,
+        "mape": 689.5497159090909
+      },
+      "metrics_source": "model/deep/output/metrics.json"
+    },
+    {
+      "version": "gru-20260326235802",
+      "model_family": "gru",
+      "trigger": "manual",
+      "dry_run": true,
+      "created_at": "2026-03-26T23:58:02.458678+00:00",
+      "metrics": {
+        "rmse": 15170.09375,
+        "mae": 15170.09375,
+        "mape": 689.5497159090909
+      },
+      "metrics_source": "model/deep/output/metrics.json"
+    }
+  ],
+  "history": [
+    {
+      "event": "bootstrap",
+      "at": "2026-03-26T23:58:02.460360+00:00",
+      "detail": "initialize active model from metrics (gru)"
+    },
+    {
+      "event": "retrain",
+      "at": "2026-03-26T23:58:02.462826+00:00",
+      "detail": "candidate=gru-20260326235802, family=gru, dry_run=True"
+    },
+    {
+      "event": "publish",
+      "at": "2026-03-26T23:58:02.577743+00:00",
+      "detail": "version=gru-20260326235802, operator=admin"
+    },
+    {
+      "event": "health_check",
+      "at": "2026-03-26T23:58:02.587685+00:00",
+      "detail": "status=healthy, active=gru-20260326235802"
+    },
+    {
+      "event": "health_check",
+      "at": "2026-03-26T23:58:02.596394+00:00",
+      "detail": "status=healthy, active=gru-20260326235802"
+    },
+    {
+      "event": "retrain",
+      "at": "2026-03-27T00:09:35.081478+00:00",
+      "detail": "candidate=gru-20260327000935, family=gru, dry_run=True"
+    },
+    {
+      "event": "publish",
+      "at": "2026-03-27T00:09:35.096292+00:00",
+      "detail": "version=gru-20260327000935, operator=admin"
+    },
+    {
+      "event": "health_check",
+      "at": "2026-03-27T00:09:35.111594+00:00",
+      "detail": "status=healthy, active=gru-20260327000935"
+    },
+    {
+      "event": "health_check",
+      "at": "2026-03-27T00:09:35.122191+00:00",
+      "detail": "status=healthy, active=gru-20260327000935"
+    },
+    {
+      "event": "retrain",
+      "at": "2026-03-27T00:13:54.606297+00:00",
+      "detail": "candidate=gru-20260327001354, family=gru, dry_run=True"
+    },
+    {
+      "event": "publish",
+      "at": "2026-03-27T00:13:54.622945+00:00",
+      "detail": "version=gru-20260327001354, operator=admin"
+    },
+    {
+      "event": "retrain",
+      "at": "2026-03-27T00:13:54.637527+00:00",
+      "detail": "candidate=lstm-20260327001354, family=lstm, dry_run=True"
+    },
+    {
+      "event": "publish",
+      "at": "2026-03-27T00:13:54.652760+00:00",
+      "detail": "version=lstm-20260327001354, operator=admin"
+    },
+    {
+      "event": "rollback",
+      "at": "2026-03-27T00:13:54.667625+00:00",
+      "detail": "from=lstm-20260327001354, to=gru-20260327001354, operator=admin"
+    },
+    {
+      "event": "health_check",
+      "at": "2026-03-27T00:13:54.691157+00:00",
+      "detail": "status=healthy, active=gru-20260327001354"
+    },
+    {
+      "event": "retrain",
+      "at": "2026-03-27T00:14:12.041451+00:00",
+      "detail": "candidate=gru-20260327001412, family=gru, dry_run=True"
+    },
+    {
+      "event": "publish",
+      "at": "2026-03-27T00:14:12.060141+00:00",
+      "detail": "version=gru-20260327001412, operator=admin"
+    },
+    {
+      "event": "health_check",
+      "at": "2026-03-27T00:14:12.074179+00:00",
+      "detail": "status=healthy, active=gru-20260327001412"
+    },
+    {
+      "event": "health_check",
+      "at": "2026-03-27T00:14:12.085528+00:00",
+      "detail": "status=healthy, active=gru-20260327001412"
+    }
+  ],
+  "last_health": {
+    "status": "healthy",
+    "checked_at": "2026-03-27T00:14:12.085516+00:00",
+    "active_version": "gru-20260327001412",
+    "model_family": "gru",
+    "metrics_exists": true,
+    "metrics_age_hours": 6.67,
+    "mape": 689.5497159090909,
+    "thresholds": {
+      "metrics_age_hours_lte": 72.0,
+      "mape_lt": 1000.0
+    }
+  }
+}

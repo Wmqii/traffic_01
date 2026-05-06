@@ -1,0 +1,4 @@
+train_id,timestamp,station,line,occupancy_pct
+metro-01,2026-03-25T08:05:00Z,North Station,Blue Line,68
+metro-02,2026-03-25T08:12:00Z,Central Station,Red Line,74
+metro-03,2026-03-25T08:20:00Z,East Station,Blue Line,63

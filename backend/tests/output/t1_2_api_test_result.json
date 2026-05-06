@@ -1,0 +1,238 @@
+{
+  "checks": [
+    {
+      "name": "health_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_invalid_401",
+      "ok": true,
+      "status": 401,
+      "detail": ""
+    },
+    {
+      "name": "login_viewer",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_viewer_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_analyst",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_analyst_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "login_admin",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "token_admin_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "auth_me_viewer_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "prediction_viewer_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "events_viewer_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "events_non_empty",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "attribution_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "attribution_analyst_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "heat_first_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "heat_second_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "cache_stats_viewer_403",
+      "ok": true,
+      "status": 403,
+      "detail": ""
+    },
+    {
+      "name": "cache_stats_admin_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "cache_stats_has_hits_misses",
+      "ok": true,
+      "status": 200,
+      "detail": "hits=1,misses=1"
+    },
+    {
+      "name": "cache_refresh_analyst_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_overview_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_overview_non_empty",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_trend_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_causes_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_prediction_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_segment_predictions_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_segment_predictions_non_empty",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_model_errors_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_model_errors_non_empty",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "analytics_report_public_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "task_submit_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "task_id_present",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "task_status_terminal",
+      "ok": true,
+      "status": 200,
+      "detail": "completed"
+    },
+    {
+      "name": "task_not_found_404",
+      "ok": true,
+      "status": 404,
+      "detail": ""
+    },
+    {
+      "name": "task_list_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_no_auth_401",
+      "ok": true,
+      "status": 401,
+      "detail": ""
+    },
+    {
+      "name": "audit_admin_200",
+      "ok": true,
+      "status": 200,
+      "detail": ""
+    },
+    {
+      "name": "audit_endpoint_count_valid",
+      "ok": true,
+      "status": 200,
+      "detail": "32"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 38,
+    "passed": 38,
+    "failed": 0
+  }
+}

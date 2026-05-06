@@ -1,0 +1,32 @@
+event_id,timestamp,location,category,expected_attendance
+event-0001,2026-03-25T10:30:00Z,Sports Arena,Art Opening,377
+event-0002,2026-03-25T15:30:00Z,Concert Hall,Movie Premiere,1543
+event-0003,2026-03-25T10:30:00Z,Tech Park,Concert,2658
+event-0004,2026-03-25T14:00:00Z,University Campus,Art Opening,2148
+event-0005,2026-03-26T15:00:00Z,University Campus,Concert,9442
+event-0006,2026-03-26T10:00:00Z,Concert Hall,Sports Game,389
+event-0007,2026-03-26T09:30:00Z,Exhibition Hall,Art Opening,2985
+event-0008,2026-03-27T15:00:00Z,Sports Arena,Exhibition,399
+event-0009,2026-03-27T14:00:00Z,Business Tower,Food Fair,967
+event-0010,2026-03-28T14:30:00Z,Business Tower,Food Fair,632
+event-0011,2026-03-28T14:00:00Z,Tech Park,Theater Show,3064
+event-0012,2026-03-28T10:00:00Z,University Campus,Concert,382
+event-0013,2026-03-28T15:00:00Z,Tech Park,Festival,347
+event-0014,2026-03-28T15:30:00Z,Concert Hall,Sports Game,216
+event-0015,2026-03-29T09:00:00Z,Concert Hall,Art Opening,8158
+event-0016,2026-03-29T10:00:00Z,Sports Arena,Conference,661
+event-0017,2026-03-29T14:00:00Z,Downtown Center,Festival,4624
+event-0018,2026-03-29T10:00:00Z,Sports Arena,Art Opening,129
+event-0019,2026-03-29T14:30:00Z,Business Tower,Conference,441
+event-0020,2026-03-29T20:30:00Z,University Campus,Festival,2274
+event-0021,2026-03-29T10:00:00Z,Central Park,Conference,3266
+event-0022,2026-03-30T20:30:00Z,Shopping Mall,Concert,451
+event-0023,2026-03-30T14:30:00Z,Tech Park,Conference,12953
+event-0024,2026-03-30T10:00:00Z,Concert Hall,Exhibition,12040
+event-0025,2026-03-30T10:00:00Z,University Campus,Sports Game,1410
+event-0026,2026-03-30T14:00:00Z,Shopping Mall,Theater Show,64
+event-0027,2026-03-31T19:30:00Z,Concert Hall,Theater Show,5712
+event-0028,2026-03-31T20:00:00Z,Concert Hall,Exhibition,5488
+event-0029,2026-03-31T14:00:00Z,Business Tower,Art Opening,2901
+event-0030,2026-03-31T14:00:00Z,Concert Hall,Concert,2736
+event-0031,2026-03-31T15:30:00Z,Downtown Center,Theater Show,12056

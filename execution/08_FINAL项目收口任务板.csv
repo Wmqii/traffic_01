@@ -1,0 +1,6 @@
+﻿"phase","task_id","summary","owner_agent","status","start_date","due_date","dependency","notes"
+"FINAL","FINAL-1","项目总交付清单归档","PM-Agent","Done","2026-03-27","2026-03-27","M5-REL","execution/final/final_delivery_manifest_2026-03-27.md"
+"FINAL","FINAL-2","最终验收签字页归档","Doc-Agent","Done","2026-03-27","2026-03-27","FINAL-1","execution/final/final_signoff_sheet_v1.0.md"
+"FINAL","FINAL-3","终验校验与证据包","Test-Agent","Done","2026-03-27","2026-03-27","FINAL-1,FINAL-2","execution/final/output/final_acceptance_bundle.json; execution/final/final_verification_record_2026-03-27.md"
+"FINAL","FINAL-4","项目最终收口评审","PM-Agent","Done","2026-03-27","2026-03-27","FINAL-3","execution/m5/M5_评审记录_2026-03-27_第6轮.md"
+"FINAL","FINAL-5","增量遗留项收口（M2核心库表+A1-3/A1-4/A1-5）","PM-Agent","Done","2026-03-27","2026-03-27","FINAL-4","execution/m2/M2_评审记录_2026-03-27_第12轮.md; execution/m3/M3_评审记录_2026-03-27_第11轮.md; execution/m3/M3_评审记录_2026-03-27_第12轮.md; execution/m3/M3_评审记录_2026-03-27_第13轮.md"

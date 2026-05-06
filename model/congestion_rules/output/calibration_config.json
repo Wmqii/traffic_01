@@ -1,0 +1,42 @@
+{
+  "version": "a1-4-v1.0",
+  "method": "quantile_grid_search",
+  "rules": [
+    {
+      "metric_name": "expected_attendance",
+      "quantile": 0.6,
+      "threshold": 7760.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "sample_size": 3
+    },
+    {
+      "metric_name": "occupancy_pct",
+      "quantile": 0.6,
+      "threshold": 69.2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "sample_size": 3
+    },
+    {
+      "metric_name": "passenger_count",
+      "quantile": 0.6,
+      "threshold": 2.2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "sample_size": 3
+    },
+    {
+      "metric_name": "precip_mm",
+      "quantile": 0.6,
+      "threshold": 0.07999999999999999,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "sample_size": 3
+    }
+  ]
+}

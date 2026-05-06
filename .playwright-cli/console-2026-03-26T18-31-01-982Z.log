@@ -1,0 +1,19 @@
+[   32173ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js:0
+[   32201ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/map/layers/heat' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   32202ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/map/layers/heat:0
+[   32219ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/congestion/events' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   32219ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/congestion/events:0
+[   32221ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/predictions/segments/SEG-4001' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   32221ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/predictions/segments/SEG-4001:0
+[   32224ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/attributions/events/event-bridge' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   32224ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/attributions/events/event-bridge:0
+[   32226ms] [ERROR] Access to fetch at 'http://127.0.0.1:8000/api/v1/admin/audit' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:5500/index.html:0
+[   32226ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8000/api/v1/admin/audit:0
+[   32238ms] ReferenceError: echarts is not defined
+    at chart (http://127.0.0.1:5500/assets/app.js:516:26)
+    at renderTrendChart (http://127.0.0.1:5500/assets/app.js:529:5)
+    at renderAll (http://127.0.0.1:5500/assets/app.js:870:5)
+    at refreshData (http://127.0.0.1:5500/assets/app.js:966:5)
+    at async init (http://127.0.0.1:5500/assets/app.js:1051:5)
+[   53275ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://a.tile.openstreetmap.org/12/3430/1673.png:0
+[   53284ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:5500/favicon.ico:0

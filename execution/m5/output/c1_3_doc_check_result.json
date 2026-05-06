@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "name": "main_doc_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\C1-3_用户手册与运维手册_v1.0.md"
+    },
+    {
+      "name": "training_doc_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m5\\C1-3_培训材料提纲_v1.0.md"
+    },
+    {
+      "name": "section::## 3. 用户手册",
+      "ok": true,
+      "detail": "## 3. 用户手册"
+    },
+    {
+      "name": "section::### 3.1 登录与权限",
+      "ok": true,
+      "detail": "### 3.1 登录与权限"
+    },
+    {
+      "name": "section::### 3.3 核心业务流程",
+      "ok": true,
+      "detail": "### 3.3 核心业务流程"
+    },
+    {
+      "name": "section::## 4. 运维手册",
+      "ok": true,
+      "detail": "## 4. 运维手册"
+    },
+    {
+      "name": "section::### 4.2 标准操作流程",
+      "ok": true,
+      "detail": "### 4.2 标准操作流程"
+    },
+    {
+      "name": "section::### 4.3 发布与回滚",
+      "ok": true,
+      "detail": "### 4.3 发布与回滚"
+    },
+    {
+      "name": "section::### 4.4 审计与错误处理",
+      "ok": true,
+      "detail": "### 4.4 审计与错误处理"
+    },
+    {
+      "name": "section::## 5. 验收映射",
+      "ok": true,
+      "detail": "## 5. 验收映射"
+    },
+    {
+      "name": "ref::README.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\frontend\\README.md"
+    },
+    {
+      "name": "ref::README.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\backend\\README.md"
+    },
+    {
+      "name": "ref::README.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\ops\\README.md"
+    },
+    {
+      "name": "ref::O1-5_运行手册与应急预案实施说明_v1.0.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m4\\O1-5_运行手册与应急预案实施说明_v1.0.md"
+    },
+    {
+      "name": "ref::B1-5_审计日志与错误码规范实施说明_v1.0.md",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\execution\\m4\\B1-5_审计日志与错误码规范实施说明_v1.0.md"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 15,
+    "passed": 15,
+    "failed": 0
+  }
+}

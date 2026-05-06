@@ -1,0 +1,6 @@
+risk_id,phase,title,category,probability,impact,score,level,status,owner_agent,identified_date,target_close_date,mitigation_plan,trigger_condition,last_update
+R-001,M2,外部数据源接口波动,Data,3,4,12,M,Open,Data-Agent,2026-03-26,2026-04-10,建立数据重试与缓存补偿策略,连续2次拉取失败,2026-03-26
+R-002,M1,CI/CD资源未完全就绪,Ops,3,3,9,M,Open,Ops-Agent,2026-03-26,2026-04-08,预留备用runner并分时段执行构建,构建队列排队超过30分钟,2026-03-26
+R-003,M3,训练算力不足,Algo,4,4,16,H,Open,Algo-Agent,2026-03-26,2026-05-10,申请GPU时段并设置训练优先级队列,训练任务延迟超过24小时,2026-03-26
+R-004,M2,接口契约变更未同步,Backend,3,4,12,M,Open,Backend-Agent,2026-03-26,2026-04-20,接口变更需先更新OpenAPI并评审,前端联调出现字段缺失,2026-03-26
+R-005,M4,环境配置偏差导致回归失真,Test,3,3,9,M,Open,Test-Agent,2026-03-26,2026-05-30,建立配置基线与环境差异检查脚本,同用例在不同环境结果不一致,2026-03-26

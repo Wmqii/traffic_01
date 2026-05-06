@@ -1,0 +1,6 @@
+model,window_start,window_end,segment_id,metric_name,actual,prediction
+tree,2026-03-26 18:00:00+00:00,2026-03-26 18:15:00+00:00,SEG-4001,expected_attendance,5200.0,24.13347245619485
+tree,2026-03-27 19:30:00+00:00,2026-03-27 19:45:00+00:00,SEG-4002,expected_attendance,18000.0,24.13347245619485
+tree,2026-03-28 09:00:00+00:00,2026-03-28 09:15:00+00:00,SEG-4003,expected_attendance,2200.0,24.13347245619485
+arima,2026-03-27 19:30:00,2026-03-27 19:45:00,aggregated,aggregated_metric_sum,18000.0,-373.5533666401452
+arima,2026-03-28 09:00:00,2026-03-28 09:15:00,aggregated,aggregated_metric_sum,2200.0,5194.681625490419

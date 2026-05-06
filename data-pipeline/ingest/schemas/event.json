@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EventNotice",
+  "type": "object",
+  "properties": {
+    "event_id": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "location": {"type": "string"},
+    "category": {"type": "string"},
+    "expected_attendance": {"type": "integer", "minimum": 0}
+  },
+  "required": ["event_id", "timestamp", "location", "category", "expected_attendance"]
+}

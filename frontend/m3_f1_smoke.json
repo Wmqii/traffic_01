@@ -1,0 +1,109 @@
+{
+  "checks": [
+    {
+      "name": "html_has_waterfallChart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "html_has_boxplotChart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "html_has_heatReplayChart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "html_has_heatPlayBtn",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "html_has_heatPauseBtn",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "html_has_heatFrame",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "html_has_selectedSegmentTag",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "html_has_selectedEventTag",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_renderWaterfallChart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_renderBoxplotChart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_renderReplayHeatChart",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_focusSegment",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_focusEvent",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_chart-waterfall",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_chart-boxplot",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "js_has_chart-heat-replay",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api_login_viewer_200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "api_heat_200",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api_events_200",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "api_prediction_200",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 20,
+    "passed": 20
+  }
+}

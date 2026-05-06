@@ -1,0 +1,25 @@
+services:
+  backend:
+    image: python:3.11-slim
+    working_dir: /app
+    env_file:
+      - ../environments/prod.env
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "pip install --no-cache-dir fastapi uvicorn pydantic pyjwt &&
+      uvicorn backend.app:app --host 0.0.0.0 --port ${API_PORT}"
+    volumes:
+      - ../..:/app
+    ports:
+      - "${API_PORT}:${API_PORT}"
+
+  frontend:
+    image: python:3.11-slim
+    working_dir: /app
+    command: python -m http.server ${FRONTEND_PORT} --directory frontend
+    volumes:
+      - ../..:/app
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+

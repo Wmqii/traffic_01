@@ -1,0 +1,45 @@
+{
+  "checks": [
+    {
+      "name": "metrics_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\stgnn\\output\\metrics.json"
+    },
+    {
+      "name": "predictions_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\stgnn\\output\\predictions.csv"
+    },
+    {
+      "name": "report_exists",
+      "ok": true,
+      "detail": "D:\\小桌面\\交通拥堵\\model\\stgnn\\output\\model_report.md"
+    },
+    {
+      "name": "model_type",
+      "ok": true,
+      "detail": "stgnn_proxy_ridge"
+    },
+    {
+      "name": "metric_rmse_positive",
+      "ok": true,
+      "detail": "10454.177389936624"
+    },
+    {
+      "name": "metric_mae_positive",
+      "ok": true,
+      "detail": "9752.087584283452"
+    },
+    {
+      "name": "metric_mape_positive",
+      "ok": true,
+      "detail": "214.36048764920187"
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  }
+}

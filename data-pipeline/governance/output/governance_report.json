@@ -1,0 +1,48 @@
+{
+  "run_mode": "normal",
+  "checked_at": "2026-05-03T07:23:57.239800+00:00",
+  "input_dir": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\ingest\\staging",
+  "rules_file": "D:\\lenovo\\Software-byme\\pycharm\\bishe_project1\\Traffic_congestion\\data-pipeline\\governance\\config\\governance_rules.json",
+  "entries": [
+    {
+      "source": "event",
+      "total_rows": 31,
+      "clean_rows": 31,
+      "reject_rows": 0,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 0
+    },
+    {
+      "source": "metro",
+      "total_rows": 1680,
+      "clean_rows": 23,
+      "reject_rows": 1657,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 1657
+    },
+    {
+      "source": "taxi",
+      "total_rows": 5031,
+      "clean_rows": 46,
+      "reject_rows": 4985,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 4985
+    },
+    {
+      "source": "weather",
+      "total_rows": 168,
+      "clean_rows": 3,
+      "reject_rows": 165,
+      "anomaly_count": 0,
+      "missing_count": 0,
+      "duplicate_count": 0,
+      "delay_count": 165
+    }
+  ]
+}

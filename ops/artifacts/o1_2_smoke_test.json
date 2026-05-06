@@ -1,0 +1,42 @@
+﻿{
+    "api_base":  "http://127.0.0.1:18000",
+    "env":  "test",
+    "checks":  [
+                   {
+                       "ok":  true,
+                       "status":  200,
+                       "name":  "health"
+                   },
+                   {
+                       "ok":  true,
+                       "status":  200,
+                       "name":  "login_viewer"
+                   },
+                   {
+                       "ok":  true,
+                       "status":  200,
+                       "name":  "heat_with_viewer"
+                   },
+                   {
+                       "ok":  true,
+                       "status":  403,
+                       "name":  "admin_audit_forbidden_viewer"
+                   },
+                   {
+                       "ok":  true,
+                       "status":  200,
+                       "name":  "login_admin"
+                   },
+                   {
+                       "ok":  true,
+                       "status":  200,
+                       "name":  "admin_audit_with_admin"
+                   }
+               ],
+    "summary":  {
+                    "pass":  true,
+                    "total":  6,
+                    "passed":  6
+                },
+    "generated_at":  "2026-03-27T01:16:05"
+}
