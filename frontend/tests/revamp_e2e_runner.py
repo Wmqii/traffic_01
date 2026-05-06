@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import os
@@ -93,7 +93,7 @@ def main() -> int:
         env["PYTHONPATH"] = "."
 
         backend_proc = subprocess.Popen(  # noqa: S603
-            [sys.executable, "-m", "uvicorn", "backend.app:app", "--host", "127.0.0.1", "--port", "8000"],
+            [sys.executable, "-m", "uvicorn", "backend.app:app", "--host", "127.0.0.1", "--port", "8005"],
             cwd=ROOT,
             env=env,
             stdout=backend_log.open("w", encoding="utf-8"),
@@ -108,7 +108,7 @@ def main() -> int:
             text=True,
         )
 
-        add("backend_health_ready", wait_http_ready("http://127.0.0.1:8000/health"), "http://127.0.0.1:8000/health")
+        add("backend_health_ready", wait_http_ready("http://127.0.0.1:8005/health"), "http://127.0.0.1:8005/health")
         add("frontend_ready", wait_http_ready("http://127.0.0.1:5500/index.html"), "http://127.0.0.1:5500/index.html")
 
         rc, out, err = run_pw(["open", "http://127.0.0.1:5500/index.html"])

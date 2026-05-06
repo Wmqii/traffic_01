@@ -1,4 +1,4 @@
-﻿# Frontend（改版后业务展示）
+# Frontend（改版后业务展示）
 
 ## 页面结构
 - 路况总览：地图路段拥堵状态 + 路段流量对比 + 单路段时间趋势
@@ -10,7 +10,7 @@
 ```powershell
 cd d:\小桌面\交通拥堵
 $env:PYTHONPATH='.'
-uvicorn backend.app:app --port 8000
+uvicorn backend.app:app --port 8005
 
 cd d:\小桌面\交通拥堵\frontend
 python -m http.server 5500

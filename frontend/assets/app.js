@@ -1,6 +1,6 @@
 (function () {
   const state = {
-    apiBase: localStorage.getItem('traffic_api_base') || 'http://127.0.0.1:8005',
+    apiBase: (() => { const saved = localStorage.getItem('traffic_api_base'); if (saved && saved.includes(':8000')) { return 'http://127.0.0.1:8005'; } return saved || 'http://127.0.0.1:8005'; })(),
     windowMinutes: 15,
     selectedSegmentId: '',
     overview: [],
@@ -1288,7 +1288,7 @@
 
     state.homeMap = window.L.map('homeMap', {
       center: [31.229, 121.469],
-      zoom: 14,
+      zoom: 16,
       zoomControl: true,
       preferCanvas: true,
     });
@@ -1449,7 +1449,7 @@
     reportContainer.innerHTML = reports.map(r => `
       <div class="report-item">
         <p><b>路段 ${r.segment_id}</b> 预测流量 ${r.pred_flow} 辆/15分钟。</p>
-        <p>归因结果显示主导因素为 <b>${r.dominant_cause}</b>（贡献约 ${r.cause_contribution}%）。</p>
+        <p>归因结果显示主导因素为 <b>${r.dominant_cause}</b>。</p>
         <p>拥堵指数 ${r.congestion_index.toFixed(3)}，预测等级 <b class="sev-${r.congestion_level}">${r.congestion_level}</b>。</p>
         <p>建议：${r.suggestion}</p>
       </div>
