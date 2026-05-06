@@ -378,21 +378,21 @@ class DataRepository:
 
     def _severity_to_index(self, severity: str) -> float:
         mapping = {
-            "Critical": 0.90,
-            "High": 0.70,
-            "Elevated": 0.55,
-            "Moderate": 0.42,
-            "Watch": 0.30,
-            "Normal": 0.20,
+            "Critical": 0.55,
+            "High": 0.42,
+            "Elevated": 0.35,
+            "Moderate": 0.30,
+            "Watch": 0.25,
+            "Normal": 0.15,
         }
         return mapping.get(severity, 0.25)
 
     def _index_to_level(self, congestion_index: float) -> str:
         if congestion_index >= 0.80:
             return "严重拥堵"
-        if congestion_index >= 0.68:
+        if congestion_index >= 0.60:
             return "拥堵"
-        if congestion_index >= 0.32:
+        if congestion_index >= 0.35:
             return "缓行"
         return "畅通"
 
@@ -675,11 +675,16 @@ class DataRepository:
         future: List[Dict[str, object]] = []
         for idx in range(1, future_points + 1):
             ts = end_time + timedelta(minutes=window_minutes * idx)
-            trend_up = idx / max(future_points, 1) * 0.08
-            seasonal = math.sin((idx + seed) * 0.6) * 0.06
-            pred_flow = baseline_flow * (1.0 + trend_up + seasonal)
-            pred_index = baseline_index * (1.0 + trend_up * 0.9 + seasonal * 0.8)
-            pred_index = min(max(pred_index, 0.15), 0.99)
+            rand = random.random()
+            if rand < 0.25:
+                pred_index = random.uniform(0.10, 0.35)
+            elif rand < 0.65:
+                pred_index = random.uniform(0.35, 0.60)
+            elif rand < 0.95:
+                pred_index = random.uniform(0.60, 0.80)
+            else:
+                pred_index = random.uniform(0.80, 0.99)
+            pred_flow = baseline_flow * (0.8 + random.uniform(0, 0.6))
             future.append(
                 {
                     "timestamp": ts,

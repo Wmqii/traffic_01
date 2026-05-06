@@ -431,8 +431,8 @@
   }
 
   function levelByIndex(index) {
-    if (index >= 0.8) return '严重拥堵';
-    if (index >= 0.6) return '拥堵';
+    if (index >= 0.80) return '严重拥堵';
+    if (index >= 0.60) return '拥堵';
     if (index >= 0.35) return '缓行';
     return '畅通';
   }
@@ -755,14 +755,23 @@
 
   function buildMockSegmentPredictionSnapshots() {
     const list = state.overview.map((item, idx) => {
-      const base = Number(item.congestion_index || 0.3);
-      const adjusted = clamp(base * (1.05 + idx * 0.01), 0.1, 0.99);
+      const rand = Math.random();
+      let pred_index;
+      if (rand < 0.25) {
+        pred_index = clamp(Math.random() * 0.35, 0.1, 0.35);
+      } else if (rand < 0.65) {
+        pred_index = clamp(0.35 + Math.random() * 0.25, 0.35, 0.60);
+      } else if (rand < 0.95) {
+        pred_index = clamp(0.60 + Math.random() * 0.20, 0.60, 0.80);
+      } else {
+        pred_index = clamp(0.80 + Math.random() * 0.19, 0.80, 0.99);
+      }
       return {
         segment_id: item.segment_id,
-        pred_flow_veh_15m: Number((Number(item.flow_veh_15m || 200) * (1.08 + idx * 0.005)).toFixed(1)),
-        pred_congestion_index: Number(adjusted.toFixed(3)),
-        pred_congestion_level: levelByIndex(adjusted),
-        confidence: 0.82,
+        pred_flow_veh_15m: Number((Number(item.flow_veh_15m || 200) * (0.9 + Math.random() * 0.4)).toFixed(1)),
+        pred_congestion_index: Number(pred_index.toFixed(3)),
+        pred_congestion_level: levelByIndex(pred_index),
+        confidence: 0.6 + Math.random() * 0.38,
         window_start: new Date().toISOString(),
         window_end: new Date(Date.now() + state.windowMinutes * 60000).toISOString(),
       };
@@ -1208,21 +1217,7 @@
     ].join('');
   }
 
-  function renderEventTable() {
-    const rows = state.events.filter((item) => item.segment_id === state.selectedSegmentId);
-    const list = rows.length ? rows : state.events;
-    byId('eventTable').innerHTML = [
-      '<table><thead><tr><th>事件ID</th><th>名称</th><th>路段</th><th>等级</th><th>置信度</th><th>时间窗</th></tr></thead><tbody>',
-      ...list.map((item) => {
-        const level = normalizeLevel(item.severity || item.predicted_severity || '缓行');
-        const confidence = Math.round((Number(item.confidence || 0) || 0) * 100);
-        return `<tr><td>${item.event_id}</td><td>${item.name || '-'}</td><td>${item.segment_id}</td><td class="sev-${level}">${level}</td><td>${confidence}%</td><td>${toLabel(item.window_start)} - ${toLabel(item.window_end)}</td></tr>`;
-      }),
-      '</tbody></table>',
-    ].join('');
-  }
-
-  function setupMap() {
+    function setupMap() {
     if (!hasLeaflet()) {
       byId('map').innerHTML = '<div class="map-fallback">Leaflet 未加载，地图不可用。</div>';
       return;
@@ -1642,7 +1637,6 @@
     renderTrendChart();
     renderCauseCharts();
     renderPredictionCharts();
-    renderEventTable();
     renderMapLayers();
     renderPredictionMap();
     renderHomeKpiGrid();
