@@ -766,12 +766,13 @@
       } else {
         pred_index = clamp(0.80 + Math.random() * 0.19, 0.80, 0.99);
       }
+      const confidence = 0.60 + Math.random() * 0.38;
       return {
         segment_id: item.segment_id,
         pred_flow_veh_15m: Number((Number(item.flow_veh_15m || 200) * (0.9 + Math.random() * 0.4)).toFixed(1)),
         pred_congestion_index: Number(pred_index.toFixed(3)),
         pred_congestion_level: levelByIndex(pred_index),
-        confidence: 0.6 + Math.random() * 0.38,
+        confidence: Number(confidence.toFixed(3)),
         window_start: new Date().toISOString(),
         window_end: new Date(Date.now() + state.windowMinutes * 60000).toISOString(),
       };
